@@ -1,5 +1,7 @@
-#source files
-SRC = 	ft_atoi.c \
+#####################INPUTS#####################
+
+#libft source files original
+SRC_FILES = 	ft_atoi.c \
 		ft_bzero.c \
 		ft_calloc.c \
 		ft_isalnum.c \
@@ -34,18 +36,22 @@ SRC = 	ft_atoi.c \
 		ft_tolower.c \
 		ft_toupper.c \
 
+#source files gnl
+GNL_FILES =	get_next_line.c \
+		get_next_line_utils.c
 
-#directory of objects
+#directories
 OBJPATH = temps
+SRC_PATH = original_functions
+GNL_PATH = getnextline
 
 #tranform into .o
-OBJ = $(SRC:%.c=$(OBJPATH)/%.o)
+OBJ = $(SRC_FILES:%.c=$(OBJPATH)/%.o)
+
+OBJ_GNL = $(GNL_FILES:%.c=$(OBJPATH)/%.o)
 
 #header source
 HEADER = libft.h
-
-#directories with *.c
-VPATH = original_functions getnextline other_functions
 
 #header to libft.h
 INCLUDE = -I ./
@@ -55,25 +61,34 @@ NAME = libft.a
 
 #for compliling
 FLAGS = -Wall -Wextra -Werror
+MLXFLAGS =	-lm -lXext -lX11
 
 #remove files
 RM = rm -f
 
-##RULES
-#compile 
-$(OBJ)/%.o: $(SRC) $(HEADER)
-		cc $(FLAGS) -c $< -o $@ $(INCLUDE)
+#remove directory
+RM_DIR = rm -Rf
 
-#rule name - make library
-$(NAME): $(OBJ)
-		ar -rcs $(NAME) $(OBJ)
+#####################RULES#####################
 
 #make libft.a
 all: $(NAME)
 
+#compile libft
+$(OBJPATH)/%.o: $(SRC_PATH)/%.c $(HEADER)
+		cc $(FLAGS) -c $< -o $@ $(INCLUDE)
+
+#compile gnl
+$(OBJPATH)/%.o: $(GNL_PATH)/%.c $(HEADER)
+		cc $(FLAGS) -c $< -o $@ $(INCLUDE)
+
+#rule name - make library
+$(NAME): $(OBJ) $(OBJ_GNL)
+		ar -rcs $(NAME) $(OBJ) $(OBJ_GNL)
+
 #remove objects
-clean: 
-		$(RM) $(OBJ)
+clean:
+		$(RM) $(OBJ) $(OBJ_GNL)
 #remove all
 fclean: clean
 		$(RM) $(NAME)

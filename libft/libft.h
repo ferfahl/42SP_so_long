@@ -6,7 +6,7 @@
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 18:19:58 by feralves          #+#    #+#             */
-/*   Updated: 2022/07/14 18:46:07 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/01 18:17:40 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include "getnextline/get_next_line.h"
 
 //Functions
 int		ft_atoi(const char *nptr);

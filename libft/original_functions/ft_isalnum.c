@@ -6,7 +6,7 @@
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 05:08:46 by feralves          #+#    #+#             */
-/*   Updated: 2022/06/17 00:53:33 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/01 17:05:17 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_isalnum(int c)
 {
-	if (c >= '0' && c <= '9')
+	if (ft_isdigit(c))
 		return (2);
-	else if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+	else if (ft_isalpha(c))
 		return (1);
 	return (0);
 }
