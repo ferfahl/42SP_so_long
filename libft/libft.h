@@ -6,7 +6,7 @@
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 18:19:58 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/01 18:17:40 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/02 01:50:54 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "getnextline/get_next_line.h"
+# include "printf/ft_printf.h"
 
 //Functions
 int		ft_atoi(const char *nptr);
@@ -54,5 +55,10 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+
+//Other functions
+char	*ft_hex_itoa(unsigned int n);
+char	*ft_pointer_itoa(unsigned long int n);
+char	*ft_uitoa(unsigned int n);
 
 #endif

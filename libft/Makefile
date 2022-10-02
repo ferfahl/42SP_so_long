@@ -34,34 +34,49 @@ SRC_FILES = 	ft_atoi.c \
 		ft_strtrim.c \
 		ft_substr.c \
 		ft_tolower.c \
-		ft_toupper.c \
+		ft_toupper.c
+
+#source files other functions
+OTHER_FILES =	ft_hex_itoa.c \
+		ft_pointer_itoa.c \
+		ft_uitoa.c \
 
 #source files gnl
 GNL_FILES =	get_next_line.c \
 		get_next_line_utils.c
 
-#directories
-OBJPATH = temps
-SRC_PATH = original_functions
-GNL_PATH = getnextline
-
-#tranform into .o
-OBJ = $(SRC_FILES:%.c=$(OBJPATH)/%.o)
-
-OBJ_GNL = $(GNL_FILES:%.c=$(OBJPATH)/%.o)
+#source files ft_printf
+PRINTF_FILES =	ft_printf.c \
+		auxiliar_functions.c \
+		auxiliar_functions_more.c
 
 #header source
 HEADER = libft.h
 
-#header to libft.h
-INCLUDE = -I ./
-
 #static library's name
 NAME = libft.a
 
+#header to libft.h
+INCLUDE = -I ./
+
+#directories
+OBJPATH = temps
+SRC_PATH = original_functions
+OTHER_PATH = other_functions
+GNL_PATH = getnextline
+PRINTF_PATH = printf
+
+#tranform into .o
+OBJ = $(SRC_FILES:%.c=$(OBJPATH)/%.o)
+OBJ_OTHER = $(OTHER_FILES:%.c=$(OBJPATH)/%.o)
+OBJ_GNL = $(GNL_FILES:%.c=$(OBJPATH)/%.o)
+OBJ_PRINTF = $(PRINTF_FILES:%.c=$(OBJPATH)/%.o)
+
 #for compliling
 FLAGS = -Wall -Wextra -Werror
-MLXFLAGS =	-lm -lXext -lX11
+
+GDB = -ggdb
+VAL = valgrind --trace-children=yes --leak-check=full --track-origins=yes ./$(NAME)
 
 #remove files
 RM = rm -f
@@ -78,20 +93,34 @@ all: $(NAME)
 $(OBJPATH)/%.o: $(SRC_PATH)/%.c $(HEADER)
 		cc $(FLAGS) -c $< -o $@ $(INCLUDE)
 
+#compile libft
+$(OBJPATH)/%.o: $(OTHER_PATH)/%.c $(HEADER)
+		cc $(FLAGS) -c $< -o $@ $(INCLUDE)
+
 #compile gnl
 $(OBJPATH)/%.o: $(GNL_PATH)/%.c $(HEADER)
 		cc $(FLAGS) -c $< -o $@ $(INCLUDE)
 
+#compile ft_printf
+$(OBJPATH)/%.o: $(PRINTF_PATH)/%.c $(HEADER)
+		cc $(FLAGS) -c $< -o $@ $(INCLUDE)
+
 #rule name - make library
-$(NAME): $(OBJ) $(OBJ_GNL)
-		ar -rcs $(NAME) $(OBJ) $(OBJ_GNL)
+$(NAME): $(OBJ) $(OBJ_GNL) $(OBJ_PRINTF) $(OBJ_OTHER)
+		ar -rcs $(NAME) $(OBJ) $(OBJ_GNL) $(OBJ_PRINTF) $(OBJ_OTHER)
+
+#tester
+main:
+		cc $(FLAGS) main.c $(NAME) && clear && ./a.out
 
 #remove objects
 clean:
-		$(RM) $(OBJ) $(OBJ_GNL)
+		$(RM) $(OBJ) $(OBJ_GNL) $(OBJ_PRINTF) $(OBJ_OTHER)
+
 #remove all
 fclean: clean
 		$(RM) $(NAME)
+
 #clear all
 re: fclean all
 
