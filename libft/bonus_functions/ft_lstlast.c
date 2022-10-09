@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/16 01:45:01 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/06 16:50:12 by feralves         ###   ########.fr       */
+/*   Created: 2022/10/06 16:44:22 by feralves          #+#    #+#             */
+/*   Updated: 2022/10/06 16:55:00 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
-*@brief
-*@param
-*@return
+*@brief Returns the last node of the list
+*@param lst: The beginning of the list
+*@return Last node of the list
 */
 
-int	ft_toupper(int c)
-{
-	if ((c >= 'a' && c <= 'z'))
-		return (c - 32);
-	else
-		return (c);
-}
+t_list *ft_lstlast(t_list *lst)

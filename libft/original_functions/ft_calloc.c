@@ -6,11 +6,17 @@
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 00:35:00 by feralves          #+#    #+#             */
-/*   Updated: 2022/07/14 18:38:16 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/06 16:48:39 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/**
+*@brief
+*@param
+*@return
+*/
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {

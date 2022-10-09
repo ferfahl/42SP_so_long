@@ -6,11 +6,17 @@
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 20:26:35 by feralves          #+#    #+#             */
-/*   Updated: 2022/07/14 19:05:35 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/06 16:50:26 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/**
+*@brief
+*@param
+*@return
+*/
 
 char	*ft_strrchr(const char *s, int c)
 {

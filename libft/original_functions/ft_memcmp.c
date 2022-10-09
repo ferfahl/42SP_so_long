@@ -6,11 +6,17 @@
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 21:54:46 by feralves          #+#    #+#             */
-/*   Updated: 2022/06/17 02:45:39 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/06 16:49:17 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/**
+*@brief
+*@param
+*@return
+*/
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

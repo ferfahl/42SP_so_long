@@ -6,11 +6,17 @@
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 01:45:29 by feralves          #+#    #+#             */
-/*   Updated: 2022/06/19 20:08:51 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/06 16:50:16 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/**
+*@brief
+*@param
+*@return
+*/
 
 int	ft_tolower(int c)
 {

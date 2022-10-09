@@ -6,11 +6,17 @@
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 01:25:43 by feralves          #+#    #+#             */
-/*   Updated: 2022/06/17 00:53:30 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/06 16:48:52 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/**
+*@brief
+*@param
+*@return
+*/
 
 int	ft_isalpha(int c)
 {

@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/16 01:45:01 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/06 16:50:12 by feralves         ###   ########.fr       */
+/*   Created: 2022/10/06 16:44:30 by feralves          #+#    #+#             */
+/*   Updated: 2022/10/06 16:53:42 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
-*@brief
-*@param
-*@return
+*@brief counts the number of nodes in a list
+*@param lst: The beginning of the list
+*@return The length of the list
 */
 
-int	ft_toupper(int c)
-{
-	if ((c >= 'a' && c <= 'z'))
-		return (c - 32);
-	else
-		return (c);
-}
+int ft_lstsize(t_list *lst)

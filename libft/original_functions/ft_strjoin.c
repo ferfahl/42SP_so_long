@@ -6,11 +6,17 @@
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 21:05:03 by feralves          #+#    #+#             */
-/*   Updated: 2022/07/14 18:40:38 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/06 16:50:01 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/**
+*@brief
+*@param
+*@return
+*/
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

@@ -6,11 +6,17 @@
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 05:09:24 by feralves          #+#    #+#             */
-/*   Updated: 2022/06/17 00:53:17 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/06 16:49:05 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/**
+*@brief
+*@param
+*@return
+*/
 
 int	ft_isprint(int c)
 {

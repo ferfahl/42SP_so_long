@@ -6,11 +6,17 @@
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 20:59:31 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/01 18:46:35 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/06 16:50:20 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/**
+*@brief
+*@param
+*@return
+*/
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

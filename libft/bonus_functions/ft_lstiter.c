@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/16 01:45:01 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/06 16:50:12 by feralves         ###   ########.fr       */
+/*   Created: 2022/10/06 16:44:19 by feralves          #+#    #+#             */
+/*   Updated: 2022/10/06 17:01:19 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
-*@brief
-*@param
-*@return
+*@brief Iterates the list ’lst’ and applies the function ’f’ on the content of each node
+*@param lst: The address of a pointer to a node.
+*@param f: The address of the function used to iterate on
+the list
+*@return none
 */
 
-int	ft_toupper(int c)
-{
-	if ((c >= 'a' && c <= 'z'))
-		return (c - 32);
-	else
-		return (c);
-}
+void ft_lstiter(t_list *lst, void (*f)(void *))

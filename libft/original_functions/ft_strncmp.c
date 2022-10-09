@@ -6,11 +6,17 @@
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 02:02:11 by feralves          #+#    #+#             */
-/*   Updated: 2022/06/16 22:59:39 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/06 16:50:33 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/**
+*@brief
+*@param
+*@return
+*/
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

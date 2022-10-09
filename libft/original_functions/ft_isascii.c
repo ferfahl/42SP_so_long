@@ -6,11 +6,17 @@
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 05:09:06 by feralves          #+#    #+#             */
-/*   Updated: 2022/06/17 00:53:27 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/06 16:48:55 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/**
+*@brief
+*@param
+*@return
+*/
 
 int	ft_isascii(int c)
 {

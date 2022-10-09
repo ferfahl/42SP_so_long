@@ -6,11 +6,17 @@
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 21:13:21 by feralves          #+#    #+#             */
-/*   Updated: 2022/07/14 18:41:24 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/06 16:50:36 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/**
+*@brief
+*@param
+*@return
+*/
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/16 01:45:01 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/06 16:50:12 by feralves         ###   ########.fr       */
+/*   Created: 2022/10/06 16:44:13 by feralves          #+#    #+#             */
+/*   Updated: 2022/10/06 16:59:22 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
-*@brief
-*@param
-*@return
+*@brief Deletes and frees the given node and every successor of that node, using the function ’del’ and free(3). Finally, the pointer to the list must be set to NULL.
+*@param lst: The address of a pointer to a node.
+*@param del: The address of the function used to delete the content of the node.
+*@return none
 */
 
-int	ft_toupper(int c)
-{
-	if ((c >= 'a' && c <= 'z'))
-		return (c - 32);
-	else
-		return (c);
-}
+void ft_lstclear(t_list **lst, void (*del)(void *));

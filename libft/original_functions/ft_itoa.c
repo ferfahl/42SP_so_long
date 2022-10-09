@@ -6,11 +6,17 @@
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 00:19:50 by feralves          #+#    #+#             */
-/*   Updated: 2022/07/14 18:45:20 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/06 16:49:11 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/**
+*@brief
+*@param
+*@return
+*/
 
 static int	ft_counter(int number);
 static void	ft_write(int size, int negative, char *string, int n);

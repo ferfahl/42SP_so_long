@@ -6,11 +6,17 @@
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 00:04:48 by feralves          #+#    #+#             */
-/*   Updated: 2022/07/14 18:42:14 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/06 16:50:29 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/**
+*@brief
+*@param
+*@return
+*/
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {

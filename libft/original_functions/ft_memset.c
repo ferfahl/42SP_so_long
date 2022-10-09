@@ -6,11 +6,17 @@
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 03:00:47 by feralves          #+#    #+#             */
-/*   Updated: 2022/06/17 02:47:35 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/06 16:49:28 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/**
+*@brief
+*@param
+*@return
+*/
 
 void	*ft_memset(void *s, int c, size_t n)
 {

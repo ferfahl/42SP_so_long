@@ -6,11 +6,17 @@
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 21:09:53 by feralves          #+#    #+#             */
-/*   Updated: 2022/07/14 19:22:14 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/06 16:49:48 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/**
+*@brief
+*@param
+*@return
+*/
 
 static void	*ft_freeall(char **dest, int index);
 static void	ft_word(char **dest, char const *src, char c);
