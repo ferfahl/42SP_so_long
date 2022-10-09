@@ -56,7 +56,7 @@ int click_hook(t_vars *vars)
 }
 
 int	main(void)
-{
+/* {
 	t_vars	vars;
 
 	vars.mlx = mlx_init();
@@ -64,4 +64,14 @@ int	main(void)
 	mlx_hook(vars.win, 2, 1L<<0, esc_hook, &vars);
 	mlx_hook(vars.win, 17, 1L<<2, click_hook, &vars);
 	mlx_loop(vars.mlx);
+} */
+{
+	void	*mlx;
+	void	*img;
+	char	*relative_path = "./imgs/test.xpm";
+	int		img_width;
+	int		img_height;
+
+	mlx = mlx_init();
+	img = mlx_xpm_file_to_image(mlx, relative_path, &img_width, &img_height);
 }
