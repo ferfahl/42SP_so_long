@@ -78,22 +78,24 @@ FLAGS = -Wall -Wextra -Werror
 GDB = -ggdb
 VAL = valgrind --trace-children=yes --leak-check=full --track-origins=yes ./$(NAME)
 
-#remove files
+#remove
 RM = rm -f
-
-#remove directory
 RM_DIR = rm -Rf
 
 #####################RULES#####################
 
 #make libft.a
-all: $(NAME)
+all: $(OBJPATH) $(NAME)
+
+#make folder for temps
+$(OBJPATH):
+		@mkdir -p $(OBJPATH)
 
 #compile libft
 $(OBJPATH)/%.o: $(SRC_PATH)/%.c $(HEADER)
 		cc $(FLAGS) -c $< -o $@ $(INCLUDE)
 
-#compile libft
+#compile other functions
 $(OBJPATH)/%.o: $(OTHER_PATH)/%.c $(HEADER)
 		cc $(FLAGS) -c $< -o $@ $(INCLUDE)
 
