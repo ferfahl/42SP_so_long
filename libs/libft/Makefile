@@ -121,7 +121,7 @@ clean:
 
 #remove all
 fclean: clean
-		$(RM) $(NAME)
+		$(RM) $(NAME) $(RM_DIR) $(OBJPATH)
 
 #clear all
 re: fclean all
