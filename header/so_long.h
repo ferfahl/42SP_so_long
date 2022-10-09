@@ -13,6 +13,21 @@
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
+//struct
+typedef struct s_test
+{
+	char    *temp;
+	char    *aux;
+	int     index;
+}				t_test;
+
+typedef struct	s_vars
+{
+	void	*mlx;
+	void	*win;
+	void	*img;
+}				t_vars;
+
 //Libraries
 # include "../libs/libft/libft.h"
 # include "../libs/minilibx-linux/mlx.h"
