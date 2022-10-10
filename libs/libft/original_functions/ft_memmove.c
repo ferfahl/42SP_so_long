@@ -6,16 +6,21 @@
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 22:01:06 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/06 16:49:24 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/10 20:19:11 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
-*@brief
-*@param
-*@return
+*@brief copies n bytes from memory area src to memory area dest.The memory areas
+*may overlap: copying takes place as though the bytes in src are first copied
+*into a temporary array that does not overlap src or dest, and the bytes are then
+*copied from the temporary array to dest.
+*@param dest dest Memory area to be replaced.
+*@param src Memory area to be moved.
+*@param n Number of bytes to be moved.
+*@return a pointer to dest
 */
 
 void	*ft_memmove(void *dest, const void *src, size_t n)

@@ -6,16 +6,16 @@
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 01:25:43 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/06 16:48:52 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/10 20:10:24 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
-*@brief
-*@param
-*@return
+*@brief checks for an alphabet character
+*@param c Character as an integer
+*@return non-zero value if c is an alphabet, else it returns 0
 */
 
 int	ft_isalpha(int c)

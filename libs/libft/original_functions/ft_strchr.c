@@ -6,16 +6,20 @@
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 18:18:48 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/06 16:49:51 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/10 20:22:46 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
-*@brief
-*@param
-*@return
+*@brief returns a pointer to the first occurrence of the character c in the string s
+*@param s String to be scanned.
+*@param c Character as integer to search.
+*@return Pointer to the matched character or NULL if the character is not
+ * found. The terminating null byte is considered part of the string, so that
+ * if 'c' is specified as '\0', these functions return a pointer to the
+ * terminator.
 */
 
 char	*ft_strchr(const char *s, int c)

@@ -6,16 +6,19 @@
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 03:00:47 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/06 16:49:28 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/10 20:20:11 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
-*@brief
-*@param
-*@return
+*@brief fills the first n bytes of the memory area pointed to by s with the
+*constant byte c
+*@param s Memmory to be replaced.
+*@param c Constant byte used to replace.
+*@param n Number of bytes to be replaced.
+*@return Pointer to the replaced memory area.
 */
 
 void	*ft_memset(void *s, int c, size_t n)

@@ -6,14 +6,15 @@
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 16:24:10 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/06 16:50:39 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/10 20:11:17 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
-*@brief
+*@brief fills the first 'n' bytes of the memory area ponted to by 's' with the
+*constant byte 'c'
 *@param
 *@return
 */

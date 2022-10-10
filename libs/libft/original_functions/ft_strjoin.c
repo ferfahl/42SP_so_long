@@ -6,16 +6,18 @@
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 21:05:03 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/06 16:50:01 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/10 20:26:13 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
-*@brief
-*@param
-*@return
+*@brief returns a new string, which is the result of the concatenation of ’s1’
+*and ’s2’.
+*@param s1: The prefix string
+*@param s2: The suffix string.
+*@return the new string, NULL if the allocation fails
 */
 
 char	*ft_strjoin(char const *s1, char const *s2)

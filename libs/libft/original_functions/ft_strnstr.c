@@ -6,7 +6,7 @@
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 00:04:48 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/06 16:50:29 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/10 20:13:57 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,12 @@
 
 /**
 *@brief
-*@param
-*@return
+*@param big String to be searched by `little`.
+*@param little String to search in `big`.
+*@param len Number of bytes to search.
+*@return If 'little' is an empty string, 'big' is returned, if 'little' occurs
+*nowhere in 'big', NULL is returned, otherwise a pointer to the first
+*character of the first occurrence of 'little' is returned.
 */
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)

@@ -6,14 +6,14 @@
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 00:05:28 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/06 16:38:51 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/10 19:52:36 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
-*@brief converts the initial portion of the string pointed to by nptr to int.
+*@brief converts the initial portion of the string pointed to by nptr to int
 *@param nptr Pointer to the area of memory of the string
 *@return int the converted value or 0 on error
 */

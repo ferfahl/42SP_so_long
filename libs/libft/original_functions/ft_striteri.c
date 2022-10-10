@@ -6,7 +6,7 @@
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 21:14:33 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/06 16:49:58 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/10 20:24:55 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 /**
 *@brief
-*@param
+*@param s: The string on which to iterate
+*@param f: The function to apply to each character
 *@return
 */
 

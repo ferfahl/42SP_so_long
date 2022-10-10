@@ -6,16 +6,19 @@
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 21:09:53 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/06 16:49:48 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/10 20:21:00 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
-*@brief
-*@param
-*@return
+*@brief allocates and returns an array of strings obtained by splitting ’s’
+*using the character ’c’ as a delimiter
+*@param s : The string to be split.
+*@param c: The delimiter character
+*@return array of new strings resulting from the split. NULL if the allocation
+*fails
 */
 
 static void	*ft_freeall(char **dest, int index);

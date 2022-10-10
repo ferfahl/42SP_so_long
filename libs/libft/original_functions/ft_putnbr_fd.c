@@ -6,16 +6,17 @@
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 20:27:33 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/06 16:49:41 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/10 19:28:12 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
-*@brief
-*@param
-*@return
+*@brief outputs the integer ’n’ to the given file descriptor
+*@param n: The integer to output
+*@param fd: The file descriptor on which to write
+*@return none
 */
 
 void	ft_putnbr_fd(int n, int fd)

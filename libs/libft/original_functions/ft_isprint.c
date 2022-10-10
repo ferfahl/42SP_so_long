@@ -6,16 +6,16 @@
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 05:09:24 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/06 16:49:05 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/10 20:10:42 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
-*@brief
-*@param
-*@return
+*@brief checks for any printable character including space
+*@param c Character as an integer
+*@return non-zero value if c is printable, else it returns 0
 */
 
 int	ft_isprint(int c)
