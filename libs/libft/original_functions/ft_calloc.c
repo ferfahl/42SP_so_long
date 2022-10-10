@@ -6,16 +6,16 @@
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 00:35:00 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/06 16:48:39 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/10 17:18:44 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
-*@brief
+*@brief allocates memory for an array of nmemb elements of size bytes each and returns a pointer to the allocated memory
 *@param
-*@return
+*@return a pointer to the allocated memory, which is suitably aligned for any built-in type. Or NULL if it fails
 */
 
 void	*ft_calloc(size_t nmemb, size_t size)
