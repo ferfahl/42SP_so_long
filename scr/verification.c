@@ -6,7 +6,7 @@
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 15:25:37 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/09 15:25:38 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/14 00:59:15 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,10 @@
     //check file to turn into map (.ber)
 
     //maps verifications
-    //"f any misconfiguration of any kind is encountered in the file, the program must
-    //exit in a clean way, and return "Error\n" followed by an explicit error message of
-    //your choice."
+    /*"f any misconfiguration of any kind is encountered in the file, the
+	program must*/
+    /*exit in a clean way, and return "Error\n" followed by an explicit
+	error message of your choice."
         //empty map
         //not expected characters
         //there can only be 1 player
