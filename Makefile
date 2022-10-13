@@ -59,5 +59,5 @@ re: fclean all
 
 git:
 		git add .
-		git commit -m $<
+		git commit -m "quick update"
 		git push
