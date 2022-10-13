@@ -41,7 +41,7 @@ $(OBJPATH):
 #tester
 main:
 		make -C ./libs/libft
-		cc $(FLAGS) main.c $(LIBFT) $(MLX) $(INCLUDE) $(MLXFLAGS) 
+		cc $(FLAGS) main.c $(LIBFT) $(MLX) $(INCLUDE) $(MLXFLAGS)
 
 #remove objects
 clean:
@@ -59,4 +59,5 @@ re: fclean all
 
 git:
 		git add .
-		git commit -m 
+		git commit -m "$(m)"
+		git push
