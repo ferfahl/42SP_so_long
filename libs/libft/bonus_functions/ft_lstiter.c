@@ -20,4 +20,4 @@ the list
 *@return none
 */
 
-void ft_lstiter(t_list *lst, void (*f)(void *))
+void    ft_lstiter(t_list *lst, void (*f)(void *))

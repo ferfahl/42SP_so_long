@@ -19,7 +19,7 @@ the value of the parameter ’content’. The variable next is initialized to NU
 *@return the new node
 */
 
-t_list *ft_lstnew(void *content)
+t_list  *ft_lstnew(void *content)
 {
     t_list  *new_node;
 

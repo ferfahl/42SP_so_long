@@ -68,6 +68,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 
+//Bonus functions
+void    ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+t_list	*ft_lstlast(t_list *lst);
+t_list  *ft_lstnew(void *content);
+int     ft_lstsize(t_list *lst);
+
 //Other functions
 char	*ft_hex_itoa(unsigned int n);
 char	*ft_pointer_itoa(unsigned long int n);
