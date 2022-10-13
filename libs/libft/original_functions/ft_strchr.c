@@ -6,14 +6,15 @@
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 18:18:48 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/10 20:22:46 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/13 23:27:16 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
-*@brief returns a pointer to the first occurrence of the character c in the string s
+*@brief returns a pointer to the first occurrence of the character c in the
+*string s
 *@param s String to be scanned.
 *@param c Character as integer to search.
 *@return Pointer to the matched character or NULL if the character is not

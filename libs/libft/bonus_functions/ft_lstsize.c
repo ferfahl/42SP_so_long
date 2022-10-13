@@ -6,7 +6,7 @@
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 16:44:30 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/06 16:53:42 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/13 23:24:00 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,15 @@
 *@return The length of the list
 */
 
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
-    int count;
+	int	count;
 
-    count = 0;
-    while (lst->next != NULL)
-    {
-        count++;
-        lst = lst->next;
-    }
-    return (count);
+	count = 0;
+	while (lst->next != NULL)
+	{
+		count++;
+		lst = lst->next;
+	}
+	return (count);
 }

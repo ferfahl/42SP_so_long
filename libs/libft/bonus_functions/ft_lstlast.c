@@ -6,7 +6,7 @@
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 16:44:22 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/06 16:55:00 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/13 23:23:15 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-    if (!lst)
+	if (!lst)
 		return (NULL);
 	while (lst->next != NULL)
 		lst = lst->next;

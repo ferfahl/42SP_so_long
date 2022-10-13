@@ -6,17 +6,19 @@
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 16:44:13 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/06 16:59:22 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/13 23:19:36 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
-*@brief Deletes and frees the given node and every successor of that node, using the function ’del’ and free(3). Finally, the pointer to the list must be set to NULL.
+*@brief Deletes and frees the given node and every successor of that node, using
+*the function ’del’ and free(3). Finally, the pointer to the list must be set to
+*NULL.
 *@param lst: The address of a pointer to a node.
-*@param del: The address of the function used to delete the content of the node.
+*@param del: The address of the function used to delete the content of the node
 *@return none
 */
 
-void    ft_lstclear(t_list **lst, void (*del)(void *));
+void	ft_lstclear(t_list **lst, void (*del)(void *));

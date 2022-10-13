@@ -6,14 +6,15 @@
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 00:19:50 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/10 17:19:44 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/13 23:26:11 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
-*@brief Allocates and returns a string representing the integer received as an argument
+*@brief Allocates and returns a string representing the integer received as an
+*argument
 *@param n: the integer to convert
 *@return the string representing the integer. NULL if the allocation fails
 */

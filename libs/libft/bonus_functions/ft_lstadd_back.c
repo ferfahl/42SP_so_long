@@ -6,7 +6,7 @@
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 16:44:07 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/06 16:56:26 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/13 23:25:28 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-    t_list	*last;
+	t_list	*last;
 
 	if (!new)
 		return ;

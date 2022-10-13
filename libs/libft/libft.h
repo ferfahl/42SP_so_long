@@ -1,13 +1,13 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/16 18:19:58 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/02 01:50:54 by feralves         ###   ########.fr       */
-/*                                                                            */
+/*																			*/
+/*														:::	  ::::::::   */
+/*   libft.h											:+:	  :+:	:+:   */
+/*													+:+ +:+		 +:+	 */
+/*   By: feralves < feralves@student.42sp.org.br	+#+  +:+	   +#+		*/
+/*												+#+#+#+#+#+   +#+		   */
+/*   Created: 2022/06/16 18:19:58 by feralves		  #+#	#+#			 */
+/*   Updated: 2022/10/13 23:17:15 by feralves		 ###   ########.fr	   */
+/*																			*/
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
@@ -20,17 +20,12 @@
 # include "getnextline/get_next_line.h"
 # include "printf/ft_printf.h"
 
-/**
-*@brief structure for libft_bonus, representing a node of the list
-*@param content: The data contained in the node
-*@param next The address of the next node, or NULL if the next node is the last one
-*/
-
+//Struct
 typedef struct s_list
 {
-    void            *content;
-    struct s_list   *next;
-};                  t_list;
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 
 //Functions
 int		ft_atoi(const char *nptr);
@@ -69,11 +64,11 @@ int		ft_tolower(int c);
 int		ft_toupper(int c);
 
 //Bonus functions
-void    ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 t_list	*ft_lstlast(t_list *lst);
-t_list  *ft_lstnew(void *content);
-int     ft_lstsize(t_list *lst);
+t_list	*ft_lstnew(void *content);
+int		ft_lstsize(t_list *lst);
 
 //Other functions
 char	*ft_hex_itoa(unsigned int n);
