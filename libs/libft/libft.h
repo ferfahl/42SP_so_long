@@ -13,6 +13,18 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+/**
+*@brief structure for libft_bonus, representing a node of the list
+*@param content: The data contained in the node
+*@param next The address of the next node, or NULL if the next node is the last one
+*/
+
+typedef struct s_list
+{
+    void            *content;
+    struct s_list   *next;
+};                  t_list;
+
 //Libraries
 # include <stddef.h>
 # include <stdlib.h>
