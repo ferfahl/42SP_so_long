@@ -13,6 +13,13 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+//Libraries
+# include <stddef.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include "getnextline/get_next_line.h"
+# include "printf/ft_printf.h"
+
 /**
 *@brief structure for libft_bonus, representing a node of the list
 *@param content: The data contained in the node
@@ -24,13 +31,6 @@ typedef struct s_list
     void            *content;
     struct s_list   *next;
 };                  t_list;
-
-//Libraries
-# include <stddef.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include "getnextline/get_next_line.h"
-# include "printf/ft_printf.h"
 
 //Functions
 int		ft_atoi(const char *nptr);

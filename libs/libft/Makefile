@@ -69,12 +69,14 @@ INCLUDE = -I ./
 #directories
 OBJPATH = temps
 SRC_PATH = original_functions
+BONUS_PATH = bonus_functions
 OTHER_PATH = other_functions
 GNL_PATH = getnextline
 PRINTF_PATH = printf
 
 #tranform into .o
 OBJ = $(SRC_FILES:%.c=$(OBJPATH)/%.o)
+OBJ_BONUS = $(BONUS_FILES:%.c=$(OBJPATH)/%.o)
 OBJ_OTHER = $(OTHER_FILES:%.c=$(OBJPATH)/%.o)
 OBJ_GNL = $(GNL_FILES:%.c=$(OBJPATH)/%.o)
 OBJ_PRINTF = $(PRINTF_FILES:%.c=$(OBJPATH)/%.o)
@@ -102,6 +104,10 @@ $(OBJPATH):
 $(OBJPATH)/%.o: $(SRC_PATH)/%.c $(HEADER)
 		cc $(FLAGS) -c $< -o $@ $(INCLUDE)
 
+#compile libft
+$(OBJPATH)/%.o: $(BONUS_PATH)/%.c $(HEADER)
+		cc $(FLAGS) -c $< -o $@ $(INCLUDE)
+
 #compile other functions
 $(OBJPATH)/%.o: $(OTHER_PATH)/%.c $(HEADER)
 		cc $(FLAGS) -c $< -o $@ $(INCLUDE)
@@ -115,8 +121,8 @@ $(OBJPATH)/%.o: $(PRINTF_PATH)/%.c $(HEADER)
 		cc $(FLAGS) -c $< -o $@ $(INCLUDE)
 
 #rule name - make library
-$(NAME): $(OBJ) $(OBJ_GNL) $(OBJ_PRINTF) $(OBJ_OTHER)
-		ar -rcs $(NAME) $(OBJ) $(OBJ_GNL) $(OBJ_PRINTF) $(OBJ_OTHER)
+$(NAME): $(OBJ) $(OBJ_GNL) $(OBJ_PRINTF) $(OBJ_OTHER) $(OBJ_BONUS)
+		ar -rcs $(NAME) $(OBJ) $(OBJ_GNL) $(OBJ_PRINTF) $(OBJ_OTHER) $(OBJ_BONUS)
 
 #tester
 main:
@@ -124,7 +130,7 @@ main:
 
 #remove objects
 clean:
-		$(RM) $(OBJ) $(OBJ_GNL) $(OBJ_PRINTF) $(OBJ_OTHER)
+		$(RM) $(OBJ) $(OBJ_GNL) $(OBJ_PRINTF) $(OBJ_OTHER) $(OBJ_BONUS)
 
 #remove all
 fclean: clean
