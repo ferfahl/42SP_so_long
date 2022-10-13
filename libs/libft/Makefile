@@ -36,6 +36,9 @@ SRC_FILES = 	ft_atoi.c \
 		ft_tolower.c \
 		ft_toupper.c
 
+#source files bonus
+BONUS_FILES =
+
 #source files other functions
 OTHER_FILES =	ft_hex_itoa.c \
 		ft_pointer_itoa.c \
