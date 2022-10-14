@@ -16,10 +16,9 @@
     //check file to turn into map (.ber)
 
     //maps verifications
-    /*"f any misconfiguration of any kind is encountered in the file, the
-	program must*/
-    /*exit in a clean way, and return "Error\n" followed by an explicit
-	error message of your choice."
+    /*"if any misconfiguration of any kind is encountered in the file, the
+	program must exit in a clean way, and return "Error\n" followed by an 
+    explicit error message of your choice."
         //empty map
         //not expected characters
         //there can only be 1 player
