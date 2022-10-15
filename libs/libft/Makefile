@@ -104,7 +104,7 @@ $(OBJPATH):
 $(OBJPATH)/%.o: $(SRC_PATH)/%.c $(HEADER)
 		cc $(FLAGS) -c $< -o $@ $(INCLUDE)
 
-#compile libft
+#compile bonus
 $(OBJPATH)/%.o: $(BONUS_PATH)/%.c $(HEADER)
 		cc $(FLAGS) -c $< -o $@ $(INCLUDE)
 

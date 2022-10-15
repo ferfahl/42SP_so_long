@@ -36,7 +36,3 @@
     //Verificar os botões (- e v) para não permitir que o jogo feche
 
 
-// BONUS
-    //Make the player lose when they touch an enemy patrol
-    //Add some sprite animation.
-    //Display the movement count directly on screen instead of writing it in the shell.
