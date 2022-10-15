@@ -27,7 +27,7 @@ FLAGS =	-Wall -Werror -Wextra -g3 -O3 #-fsanitize=leak
 MLXFLAGS =	-lm -lXext -lX11
 
 GDB = -ggdb
-VAL = valgrind --trace-children=yes --leak-check=full --track-origins=yes ./$(NAME)
+VAL = valgrind --trace-children=yes --leak-check=full --track-origins=yes 
 
 
 # clean
@@ -53,6 +53,10 @@ $(OBJPATH)/%.o: $(SRC_PATH)/%.c $(HEADER)
 #rule name - make so_long
 $(NAME): $(OBJ) $(LIBFT)
 		cc $(FLAGS) -o $(NAME) $(OBJ) $(LIBFT) $(MLX) $(MLXFLAGS)
+
+#mcheck
+mem:
+		valgrind ./$(NAME)
 
 #complile libft
 $(LIBFT):

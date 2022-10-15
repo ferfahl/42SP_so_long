@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 15:26:55 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/14 23:31:23 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/15 12:17:38 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ typedef struct	s_vars
 //Functions
 
 //opening
-void	load_sprite(t_vars *vars);
+void	load_sprite(t_vars *vars, void *sprite);
 void	open_game(t_vars *vars);
 
 //closing
@@ -48,8 +48,11 @@ int		click_hook(t_vars *vars);
 void	destroy_and_free(t_vars *vars);
 
 
-//Definitions
+//Definitions paths
 # define SPRITE_WALL "./assets/sprites/wall.xpm"
 # define SPRITE_CHAR "./assets/sprites/char.xpm"
+
+//Definitions
+# define PIXEL_SIZE 64
 
 #endif
