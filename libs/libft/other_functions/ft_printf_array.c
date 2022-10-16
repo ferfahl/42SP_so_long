@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen_char.c                                   :+:      :+:    :+:   */
+/*   ft_printf_array.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/15 20:06:07 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/16 11:00:14 by feralves         ###   ########.fr       */
+/*   Created: 2022/10/16 12:04:47 by feralves          #+#    #+#             */
+/*   Updated: 2022/10/16 12:11:43 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen_char(const char *str, char a)
+void    ft_printf_array(char **array)
 {
-	size_t	count;
+    int index;
 
-	count = 0;
-	while (str[count] != '\0' && str[count] != a)
-	{
-		count++;
-	}
-	return (count);
+    index = 0;
+    while (array[index])
+    {
+        ft_printf("%s\n", array[index]);
+        index++;
+    }
 }

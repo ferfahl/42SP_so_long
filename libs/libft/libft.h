@@ -75,5 +75,7 @@ char	*ft_hex_itoa(unsigned int n);
 char	*ft_pointer_itoa(unsigned long int n);
 char	*ft_uitoa(unsigned int n);
 size_t	ft_strlen_char(const char *str, char a);
+void    ft_printf_array(char **array);
+char	*ft_strtrim_mod(char *s1, char const *set);
 
 #endif

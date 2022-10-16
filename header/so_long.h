@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 15:26:55 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/16 10:31:41 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/16 11:51:03 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ typedef struct	s_vars
 typedef struct s_data
 {
 	char	**map;
-	size_t	height;
-	size_t	width;
+	int	height;
+	int	width;
 }				t_data;
 
 
@@ -59,7 +59,7 @@ void	destroy_and_free(t_vars *vars);
 //Definitions paths
 # define SPRITE_WALL "./assets/sprites/wall.xpm"
 # define SPRITE_CHAR "./assets/sprites/char.xpm"
-# define MAP_ARCH "./assets/maps/map1.ber"
+# define MAP_ARCH "./assets/maps/test.ber"
 
 //Definitions
 # define PIXEL_SIZE 64

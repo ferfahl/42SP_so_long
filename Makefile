@@ -18,7 +18,6 @@ LIBFT =			$(LIBFT_PATH)/libft.a
 MLX_PATH =		./libs/minilibx-linux
 MLX	 = $(MLX_PATH)/libmlx.a
 
-
 #header to libft.h
 INCLUDE = -I ./ -I $(LIBFT_PATH) -I $(MLX_PATH)
 
@@ -26,10 +25,8 @@ INCLUDE = -I ./ -I $(LIBFT_PATH) -I $(MLX_PATH)
 CC =		gcc
 FLAGS =	-Wall -Werror -Wextra -g3 -O3 #-fsanitize=leak
 MLXFLAGS =	-lm -lXext -lX11
-
 GDB = -ggdb
 VAL = valgrind --leak-check=full --track-origins=yes 
-
 
 # clean
 RM =		-rm -f
@@ -41,7 +38,7 @@ OBJ = $(SRC_FILES:%.c=$(OBJPATH)/%.o)
 #####################RULES#####################
 
 #make
-all: $(LIBFT_COMP) $(OBJPATH) $(NAME)
+all: $(OBJPATH) $(NAME)
 
 #make folder for temps
 $(OBJPATH):
@@ -62,6 +59,10 @@ $(OBJPATH)/%.o: $(SRC_PATH)/%.c $(HEADER)
 #mcheck
 mem:
 		valgrind ./$(NAME)
+
+#run so_long
+so:
+		make && clear && ./so_long
 
 #remove objects
 clean:

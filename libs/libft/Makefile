@@ -47,7 +47,9 @@ BONUS_FILES = ft_lstadd_back.c \
 OTHER_FILES =	ft_hex_itoa.c \
 		ft_pointer_itoa.c \
 		ft_uitoa.c \
-		ft_strlen_char.c
+		ft_strlen_char.c \
+		ft_printf_array.c \
+		ft_strtrim_mod.c
 
 #source files gnl
 GNL_FILES =	get_next_line.c \
