@@ -74,5 +74,6 @@ int		ft_lstsize(t_list *lst);
 char	*ft_hex_itoa(unsigned int n);
 char	*ft_pointer_itoa(unsigned long int n);
 char	*ft_uitoa(unsigned int n);
+size_t	ft_strlen_char(const char *str, char a);
 
 #endif

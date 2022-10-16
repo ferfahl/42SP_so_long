@@ -41,12 +41,13 @@ BONUS_FILES = ft_lstadd_back.c \
 		ft_lstadd_front.c \
 		ft_lstlast.c \
 		ft_lstnew.c \
-		ft_lstsize.c
+		ft_lstsize.c 
 
 #source files other functions
 OTHER_FILES =	ft_hex_itoa.c \
 		ft_pointer_itoa.c \
 		ft_uitoa.c \
+		ft_strlen_char.c
 
 #source files gnl
 GNL_FILES =	get_next_line.c \

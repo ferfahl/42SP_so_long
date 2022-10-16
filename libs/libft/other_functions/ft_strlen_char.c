@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlen_char.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/20 22:26:12 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/15 12:58:27 by feralves         ###   ########.fr       */
+/*   Created: 2022/10/15 20:06:07 by feralves          #+#    #+#             */
+/*   Updated: 2022/10/16 08:06:51 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./header/so_long.h"
+#include "libft.h"
 
-/* void	attribute(t_vars *vars)
+size_t	ft_strlen_char(const char *str, char a)
 {
-	vars->mlx = NULL;
-	vars->win = NULL;
-	vars->img = NULL;
-}
+	size_t	count;
 
-int	main(void)
-{
-	t_vars	*vars;
-
-	vars = (t_vars *)malloc(sizeof(t_vars));
-	attribute(vars);
-	open_game(vars);
+	count = 0;
+	while (str[count] != '\0' && str[count] != a)
+	{
+		count++;
+	}
+	return (count);
 }
- */

@@ -4,7 +4,8 @@
 SRC_FILES =	close_game.c \
 		destroy.c \
 		open_game.c \
-		main.c
+		main.c \
+		map.c
 
 #static library's name
 NAME =	so_long
@@ -27,7 +28,7 @@ FLAGS =	-Wall -Werror -Wextra -g3 -O3 #-fsanitize=leak
 MLXFLAGS =	-lm -lXext -lX11
 
 GDB = -ggdb
-VAL = valgrind --trace-children=yes --leak-check=full --track-origins=yes 
+VAL = valgrind --leak-check=full --track-origins=yes 
 
 
 # clean
@@ -40,34 +41,36 @@ OBJ = $(SRC_FILES:%.c=$(OBJPATH)/%.o)
 #####################RULES#####################
 
 #make
-all: $(OBJPATH) $(NAME)
+all: $(LIBFT_COMP) $(OBJPATH) $(NAME)
 
 #make folder for temps
 $(OBJPATH):
 		@mkdir -p $(OBJPATH)
 
+#make libft
+$(LIBFT): 
+		make -C $(LIBFT_PATH)
+
+#rule name - make so_long
+$(NAME): $(LIBFT) $(OBJ) 
+		cc $(FLAGS) -o $(NAME) $(OBJ) $(LIBFT) $(MLX) $(MLXFLAGS)
+
 #compile so_long
 $(OBJPATH)/%.o: $(SRC_PATH)/%.c $(HEADER)
 		cc $(FLAGS) -c $< -o $@ $(INCLUDE)
-
-#rule name - make so_long
-$(NAME): $(OBJ) $(LIBFT)
-		cc $(FLAGS) -o $(NAME) $(OBJ) $(LIBFT) $(MLX) $(MLXFLAGS)
 
 #mcheck
 mem:
 		valgrind ./$(NAME)
 
-#complile libft
-$(LIBFT):
-		make -C ./libs/libft
-
 #remove objects
 clean:
-		$(RM) $(OBJ)
+		make clean -C $(LIBFT_PATH)
+		$(RM) $(OBJ) 
 
 #remove all
 fclean: clean
+		make fclean -C $(LIBFT_PATH)
 		$(RM) $(NAME) $(RM_DIR) $(OBJPATH)
 
 #clear all
