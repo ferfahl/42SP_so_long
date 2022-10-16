@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bonus_verification.c                               :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/16 20:50:22 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/16 20:50:23 by feralves         ###   ########.fr       */
+/*   Created: 2022/10/16 19:33:41 by feralves          #+#    #+#             */
+/*   Updated: 2022/10/16 20:50:08 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../header/so_long.h"
 
+int	main(int argc, char **argv)
+{
+	t_data	fullmap;
 
-// BONUS
-    //Make the player lose when they touch an enemy patrol
-    //Add some sprite animation.
-    //Display the movement count directly on screen instead of writing it in the shell.
-    //verify path with enemies
+	if (check_error_1(argc, argv, &fullmap))
+		return (1);
+	fullmap.map = malloc((fullmap.height + 1) * sizeof(char *));
+	write_map(argv[1], &fullmap);
+	if (check_error_2(&fullmap))
+		return (1);
+	check_path(&fullmap);
+}

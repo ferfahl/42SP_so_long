@@ -4,10 +4,12 @@
 FRONT_FILES =	close_game.c \
 		destroy.c \
 		open_game.c \
-		main.c \
+		start_window.c \
 
 BACK_FILES =	map.c \
-		verification.c
+		verification.c \
+		path.c \
+		main.c
 
 #static library's name
 NAME =	so_long

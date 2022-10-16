@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
+/*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 06:49:03 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/01 17:56:23 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/16 20:12:54 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_read(int fd)
 	buffer = read(fd, the_reader, BUFFER_SIZE);
 	if (buffer == -1)
 		return (free(the_reader), NULL);
-	line_read = ft_strdup("");
+	line_read = ft_strdup_mod("");
 	while (buffer > 0)
 	{
 		the_reader[buffer] = '\0';
@@ -75,7 +75,7 @@ char	*ft_return_line(int fd)
 	static char	*overrun[1024];
 
 	if (!overrun[fd])
-		overrun[fd] = ft_strdup("");
+		overrun[fd] = ft_strdup_mod("");
 	line_read = ft_read(fd);
 	aux_temp = ft_strjoin((char *)overrun[fd], line_read);
 	free(line_read);

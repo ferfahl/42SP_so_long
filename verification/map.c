@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 15:25:37 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/16 15:44:23 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/16 20:08:54 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,17 +98,4 @@ int	check_error_2(t_data *fullmap)
 	if (check == 2)
 		return (ft_printf("Error\n%s\n", ERROR_MAP_6));
 	return (0);
-}
-
-int	main(int argc, char **argv)
-{
-	t_data	fullmap;
-
-	if (check_error_1(argc, argv, &fullmap))
-		return (1);
-	fullmap.map = malloc((fullmap.height + 1) * sizeof(char *));
-	write_map(argv[1], &fullmap);
-	if (check_error_2(&fullmap))
-		return (1);
-	ft_printf_array(fullmap.map);
 }

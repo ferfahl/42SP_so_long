@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 15:26:55 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/16 15:48:59 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/16 20:33:48 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ int		check_error_1(int argc, char **argv, t_data *fullmap);
 int		check_error_2(t_data *fullmap);
 int		check_walls(t_data *fullmap);
 int		check_extras(t_data *fullmap);
+int		check_path(t_data *fullmap);
 
 //opening
 void	load_sprite(t_vars *vars, void *sprite);
@@ -76,16 +77,16 @@ void	destroy_and_free(t_vars *vars);
 # define PLAYER 'P'
 # define COLLECTIBLE 'C'
 # define ENDPOINT 'E'
+# define FLOOD 'F'
 
 //Error definitions
-# define ERROR_MAP_1 "."
+# define ERROR_MAP_1 "Invalid path"
 # define ERROR_MAP_2 "Empty map"
 # define ERROR_MAP_3 "Wrong map format" //não retangular
 # define ERROR_MAP_4 "Where are the walls?" //paredes erradas
 # define ERROR_MAP_5 "Invalid characters"
 # define ERROR_MAP_6 "Wrong number of characters/collectibles" //no collectible
-# define ERROR_MAP_7 //"valid path"
-# define ERROR_MAP_8 //valid dimension [tamanho máximo?]
+# define ERROR_MAP_7 //valid dimension [tamanho máximo?]
 # define ERROR_ARG_1 "Invalid number of arguments"
 # define ERROR_ARG_2 "Invalid extension"
 # define ERROR_ARG_3 "File not found"
