@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 15:25:37 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/16 13:42:25 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/16 14:10:18 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,12 @@ int	check_ber(char *str)
 	return (1);
 }
 
-int check_errors(int argc, char **argv, t_data *fullmap)
+int check_error_1(int argc, char **argv, t_data *fullmap)
 {
 	if (argc != 2)
-		return (ft_printf("Error\n%s\n", ERROR_ARG_1)); //ok
+		return (ft_printf("Error\n%s\n", ERROR_ARG_1));
 	if (check_ber(argv[1] + (ft_strlen(argv[1]) - 4)))
-		return (ft_printf("Error\n%s\n", ERROR_ARG_2)); //ok
+		return (ft_printf("Error\n%s\n", ERROR_ARG_2));
 	fullmap->height = map_height(argv[1]);
 	if (!fullmap->height)
 		return (ft_printf("Error\n%s\n", ERROR_MAP_2));
@@ -76,14 +76,61 @@ int check_errors(int argc, char **argv, t_data *fullmap)
 	return (0);
 }
 
+int	check_width(t_data *fullmap)
+{
+	int	index;
+	
+	index = 1;
+	fullmap->width = ft_strlen(fullmap->map[0]);
+	while (index < fullmap->height)
+	{
+		if ((int)ft_strlen(fullmap->map[index]) != fullmap->width)
+			return (1);
+		index++;
+	}
+	return (0);
+}
+
+int	check_walls(t_data *fullmap)
+{
+	int	index;
+
+	index = 0;
+	while (fullmap->map[0][index])
+	{
+		if (fullmap->map[0][index] != WALL)
+			return (1);
+		index++;
+	}
+	index = 0;
+	while (fullmap->map[fullmap->height - 1][index])
+	{
+		if (fullmap->map[fullmap->height - 1][index] != WALL)
+			return (1);
+		index++;
+	}
+	return (0);
+}
+
+int	check_error_2(t_data *fullmap)
+{
+	if (check_width(fullmap))
+		return (ft_printf("Error\n%s\n", ERROR_MAP_3));
+	if (check_walls(fullmap))
+		return (ft_printf("Error\n%s\n", ERROR_MAP_4));
+	return (0);
+}
+
 int main(int argc, char **argv)
 {
 	t_data	fullmap;
 	
-	if (check_errors(argc, argv, &fullmap))
+	if (check_error_1(argc, argv, &fullmap))
 		return (1);
 	fullmap.map = malloc((fullmap.height + 1)* sizeof(char *));
 	write_map(argv[1], &fullmap);
+	if (check_error_2(&fullmap))
+		return (1);
 	ft_printf_array(fullmap.map);
 }
 

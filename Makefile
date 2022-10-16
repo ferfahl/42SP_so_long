@@ -18,7 +18,7 @@ LIBFT =			$(LIBFT_PATH)/libft.a
 MLX_PATH =		./libs/minilibx-linux
 MLX	 = $(MLX_PATH)/libmlx.a
 
-MAP = ./assets/maps/tesst.ber
+MAP = ./assets/maps/test.ber
 
 #header to libft.h
 INCLUDE = -I ./ -I $(LIBFT_PATH) -I $(MLX_PATH)

@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 15:26:55 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/16 13:42:18 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/16 14:06:24 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ void	destroy_and_free(t_vars *vars);
 
 //Definitions
 # define PIXEL_SIZE 64
+# define WALL '1'
+
 
 //Error definitions
 # define ERROR_MAP_1 "."
