@@ -18,6 +18,8 @@ LIBFT =			$(LIBFT_PATH)/libft.a
 MLX_PATH =		./libs/minilibx-linux
 MLX	 = $(MLX_PATH)/libmlx.a
 
+MAP = ./assets/maps/tesst.ber
+
 #header to libft.h
 INCLUDE = -I ./ -I $(LIBFT_PATH) -I $(MLX_PATH)
 
@@ -58,11 +60,11 @@ $(OBJPATH)/%.o: $(SRC_PATH)/%.c $(HEADER)
 
 #mcheck
 mem:
-		valgrind ./$(NAME)
+		valgrind ./$(NAME) $(MAP)
 
 #run so_long
 so:
-		make && clear && ./so_long
+		make && clear && ./so_long $(MAP)
 
 #remove objects
 clean:

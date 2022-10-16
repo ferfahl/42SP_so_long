@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 15:26:55 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/16 11:51:03 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/16 13:42:18 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	destroy_and_free(t_vars *vars);
 # define PIXEL_SIZE 64
 
 //Error definitions
-# define ERROR_MAP_1 "File.ber not found" //se encontrou um arquivo e se o arquivo é .ber
+# define ERROR_MAP_1 "."
 # define ERROR_MAP_2 "Empty map"
 # define ERROR_MAP_3 "Wrong map format" //não retangular
 # define ERROR_MAP_4 "Where are the walls?" //paredes erradas
@@ -73,5 +73,10 @@ void	destroy_and_free(t_vars *vars);
 # define ERROR_MAP_6 "Wrong number of characters/collectibles" //no collectible
 # define ERROR_MAP_7 //"valid path"
 # define ERROR_MAP_8 //valid dimension [tamanho máximo?]
+
+
+# define ERROR_ARG_1 "Invalid number of arguments"
+# define ERROR_ARG_2 "Invalid extension"
+# define ERROR_ARG_3 "File not found"
 
 #endif
