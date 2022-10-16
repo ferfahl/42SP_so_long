@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 15:26:55 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/16 14:06:24 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/16 14:36:52 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,6 @@
 # include "../libs/minilibx-linux/mlx_int.h"
 
 //struct
-typedef struct s_test
-{
-	char    *temp;
-	char    *aux;
-	int     index;
-}				t_test;
 
 typedef struct	s_vars
 {
@@ -39,12 +33,21 @@ typedef struct	s_vars
 typedef struct s_data
 {
 	char	**map;
-	int	height;
-	int	width;
+	int		height;
+	int		width;
 }				t_data;
 
 
 //Functions
+//check
+int		map_height(char *file);
+int		map_width(t_data *fullmap);
+void	write_map(char *file, t_data *fullmap);
+int		check_ber(char *str);
+int 	check_error_1(int argc, char **argv, t_data *fullmap);
+int		check_error_2(t_data *fullmap);
+int		check_walls(t_data *fullmap);
+
 
 //opening
 void	load_sprite(t_vars *vars, void *sprite);

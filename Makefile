@@ -1,18 +1,21 @@
 #####################INPUTS#####################
 
 #scr functions
-SRC_FILES =	close_game.c \
+FRONT_FILES =	close_game.c \
 		destroy.c \
 		open_game.c \
 		main.c \
-		map.c
+
+BACK_FILES =	map.c \
+		verification.c
 
 #static library's name
 NAME =	so_long
 
 #directories
 OBJPATH = temps
-SRC_PATH = sources
+FRONT_PATH = sources
+BACK_PATH = verification
 LIBFT_PATH =	./libs/libft
 LIBFT =			$(LIBFT_PATH)/libft.a
 MLX_PATH =		./libs/minilibx-linux
@@ -35,7 +38,9 @@ RM =		-rm -f
 RM_DIR =	rm -rf
 
 #tranform into .o
-OBJ = $(SRC_FILES:%.c=$(OBJPATH)/%.o)
+OBJ_FRONT = $(FRONT_FILES:%.c=$(OBJPATH)/%.o)
+
+OBJ_BACK = $(BACK_FILES:%.c=$(OBJPATH)/%.o)
 
 #####################RULES#####################
 
@@ -51,13 +56,16 @@ $(LIBFT):
 		make -C $(LIBFT_PATH)
 
 #rule name - make so_long
-$(NAME): $(LIBFT) $(OBJ) 
-		cc $(FLAGS) -o $(NAME) $(OBJ) $(LIBFT) $(MLX) $(MLXFLAGS)
+$(NAME): $(LIBFT) $(OBJ_FRONT) $(OBJ_BACK) 
+		cc $(FLAGS) -o $(NAME) $(OBJ_BACK) $(OBJ_FRONT) $(LIBFT) $(MLX) $(MLXFLAGS)
 
-#compile so_long
-$(OBJPATH)/%.o: $(SRC_PATH)/%.c $(HEADER)
+#compile front
+$(OBJPATH)/%.o: $(FRONT_PATH)/%.c $(HEADER)
 		cc $(FLAGS) -c $< -o $@ $(INCLUDE)
 
+#compile back
+$(OBJPATH)/%.o: $(BACK_PATH)/%.c $(HEADER)
+		cc $(FLAGS) -c $< -o $@ $(INCLUDE)
 #mcheck
 mem:
 		valgrind ./$(NAME) $(MAP)
