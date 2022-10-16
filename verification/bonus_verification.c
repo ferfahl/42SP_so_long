@@ -1,5 +1,3 @@
-
-
 // BONUS
     //Make the player lose when they touch an enemy patrol
     //Add some sprite animation.

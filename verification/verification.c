@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 15:25:37 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/16 14:27:53 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/16 15:37:10 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	map_height(char *file)
 {
-	int	height;
-	int fd;
-	char    *line;
-	
+	int		height;
+	int		fd;
+	char	*line;
+
 	height = 1;
 	fd = open(file, O_RDONLY);
 	if (fd == -1)
@@ -40,7 +40,7 @@ void	write_map(char *file, t_data *fullmap)
 {
 	int	fd;
 	int	index;
-	
+
 	index = 0;
 	fd = open(file, O_RDONLY);
 	if (fd == -1)
@@ -62,7 +62,7 @@ int	check_ber(char *str)
 	return (1);
 }
 
-int check_error_1(int argc, char **argv, t_data *fullmap)
+int	check_error_1(int argc, char **argv, t_data *fullmap)
 {
 	if (argc != 2)
 		return (ft_printf("Error\n%s\n", ERROR_ARG_1));

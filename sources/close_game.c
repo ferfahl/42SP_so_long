@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 22:31:32 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/14 22:34:05 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/16 15:32:14 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ int	click_hook(t_vars *vars)
 {
 	destroy_and_free(vars);
 	exit (0);
-	return(0);
+	return (0);
 }

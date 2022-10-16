@@ -6,20 +6,20 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 12:04:47 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/16 12:11:43 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/16 15:30:30 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_printf_array(char **array)
+void	ft_printf_array(char **array)
 {
-    int index;
+	int	index;
 
-    index = 0;
-    while (array[index])
-    {
-        ft_printf("%s\n", array[index]);
-        index++;
-    }
+	index = 0;
+	while (array[index])
+	{
+		ft_printf("%s\n", array[index]);
+		index++;
+	}
 }
