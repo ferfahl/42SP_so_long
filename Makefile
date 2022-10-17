@@ -33,7 +33,7 @@ CC =		gcc
 FLAGS =	-Wall -Werror -Wextra -g3 -O3 #-fsanitize=leak
 MLXFLAGS =	-lm -lXext -lX11
 GDB = -ggdb
-VAL = valgrind --leak-check=full --track-origins=yes 
+VAL = valgrind --leak-check=full --track-origins=yes
 
 # clean
 RM =		-rm -f
@@ -54,11 +54,15 @@ $(OBJPATH):
 		@mkdir -p $(OBJPATH)
 
 #make libft
-$(LIBFT): 
+$(LIBFT):
 		make -C $(LIBFT_PATH)
 
+#make mlx
+$(MLX):
+		make -C $(MLX_PATH)
+
 #rule name - make so_long
-$(NAME): $(LIBFT) $(OBJ_FRONT) $(OBJ_BACK) 
+$(NAME): $(LIBFT) $(MLX) $(OBJ_FRONT) $(OBJ_BACK)
 		cc $(FLAGS) -o $(NAME) $(OBJ_BACK) $(OBJ_FRONT) $(LIBFT) $(MLX) $(MLXFLAGS)
 
 #compile front
@@ -79,7 +83,7 @@ so:
 #remove objects
 clean:
 		make clean -C $(LIBFT_PATH)
-		$(RM) $(OBJ) 
+		$(RM) $(OBJ)
 
 #remove all
 fclean: clean
