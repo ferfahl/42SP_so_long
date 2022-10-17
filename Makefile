@@ -70,7 +70,7 @@ $(OBJPATH)/%.o: $(BACK_PATH)/%.c $(HEADER)
 		cc $(FLAGS) -c $< -o $@ $(INCLUDE)
 #mcheck
 mem:
-		valgrind ./$(NAME) $(MAP)
+		$(VAL) ./$(NAME) $(MAP)
 
 #run so_long
 so:

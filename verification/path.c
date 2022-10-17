@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 19:41:39 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/16 20:49:55 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/16 21:07:56 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,6 @@ int	check_path(t_data *fullmap)
 	flood_fill(dupe, c.row, c.collumn, fullmap);
 	if (check_dupe(dupe))
 		return (ft_printf("Error\n%s\n", ERROR_MAP_1));
+	ft_free_array(dupe);
 	return (0);
 }

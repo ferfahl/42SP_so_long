@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 15:26:55 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/16 20:33:48 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/16 21:29:26 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,6 @@
 # include "../libs/minilibx-linux/mlx_int.h"
 
 //Structs
-typedef struct s_vars
-{
-	void	*mlx;
-	void	*win;
-	void	*img;
-}				t_vars;
-
 typedef struct s_data
 {
 	char	**map;
@@ -42,7 +35,16 @@ typedef struct s_count
 	int	collumn;
 	int	player;
 	int	endpoint;
+	int	index;
 }				t_count;
+
+typedef struct s_vars
+{
+	void	*mlx;
+	void	*win;
+	void	*img;
+	t_data	*fullmap;
+}				t_vars;
 
 //Functions
 //check
@@ -57,8 +59,9 @@ int		check_extras(t_data *fullmap);
 int		check_path(t_data *fullmap);
 
 //opening
-void	load_sprite(t_vars *vars, void *sprite);
+void	load_sprite(t_vars *vars, void *sprite, int x, int y);
 void	open_game(t_vars *vars);
+void	start_window(t_data *fullmap);
 
 //closing
 int		esc_hook(int keycode, t_vars *vars);

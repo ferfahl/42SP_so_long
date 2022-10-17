@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_free_array.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/16 19:33:41 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/16 20:56:43 by feralves         ###   ########.fr       */
+/*   Created: 2022/10/16 21:04:40 by feralves          #+#    #+#             */
+/*   Updated: 2022/10/16 21:05:47 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/so_long.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+void	ft_free_array(char **array)
 {
-	t_data	fullmap;
+	int	index;
 
-	if (check_error_1(argc, argv, &fullmap))
-		return (1);
-	fullmap.map = malloc((fullmap.height + 1) * sizeof(char *));
-	write_map(argv[1], &fullmap);
-	if (check_error_2(&fullmap))
-		return (1);
-	check_path(&fullmap);
-	start_window(&fullmap);
+	index = 0;
+	while (array[index])
+	{
+		free(array[index]);
+		index++;
+	}
+	free(array);
 }

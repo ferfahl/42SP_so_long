@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 22:36:19 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/14 22:36:33 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/16 21:16:08 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,6 @@ void	destroy_and_free(t_vars *vars)
 	mlx_destroy_window(vars->mlx, vars->win);
 	mlx_destroy_display(vars->mlx);
 	free(vars->mlx);
+	ft_free_array(vars->fullmap->map);
 	free(vars);
 }
