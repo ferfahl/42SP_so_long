@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:02:51 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/17 14:12:02 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/24 13:09:57 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ typedef struct s_vars
 # define SPRITE_WALL "./assets/sprites/wall.xpm"
 # define SPRITE_CHAR "./assets/sprites/char.xpm"
 # define SPRITE_COLLECTIBLE "./assets/sprites/collectible.xpm"
+# define SPRITE_EXIT "./assets/sprites/exit.xpm"
 # define MAP_ARCH "./assets/maps/test.ber"
 
 //Definitions

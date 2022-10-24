@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 22:37:58 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/16 21:53:46 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/24 13:35:08 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void	load_sprite(t_vars *vars, void *sprite, int x, int y)
 
 void	sprite_place(t_vars *vars, char **map)
 {
-	t_count c;
-	
+	t_count	c;
+
 	c.row = 0;
 	c.collumn = 0;
 	while (map[c.row])
@@ -37,6 +37,12 @@ void	sprite_place(t_vars *vars, char **map)
 				c.row * PIXEL_SIZE);
 			if (map[c.row][c.collumn] == COLLECTIBLE)
 				load_sprite(vars, SPRITE_COLLECTIBLE, c.collumn * PIXEL_SIZE, \
+				c.row * PIXEL_SIZE);
+			if (map[c.row][c.collumn] == ENDPOINT)
+				load_sprite(vars, SPRITE_EXIT, c.collumn * PIXEL_SIZE, \
+				c.row * PIXEL_SIZE);
+			if (map[c.row][c.collumn] == PLAYER)
+				load_sprite(vars, SPRITE_CHAR, c.collumn * PIXEL_SIZE, \
 				c.row * PIXEL_SIZE);
 			c.collumn ++;
 		}
