@@ -46,6 +46,7 @@ typedef struct s_vars
 //Definitions paths
 # define SPRITE_WALL "./assets/sprites/wall.xpm"
 # define SPRITE_CHAR "./assets/sprites/char.xpm"
+# define SPRITE_COLLECTIBLE "./assets/sprites/collectible.xpm"
 # define MAP_ARCH "./assets/maps/test.ber"
 
 //Definitions
