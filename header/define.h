@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:02:51 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/24 13:09:57 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/24 15:03:53 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,19 +35,39 @@ typedef struct s_count
 	int	index;
 }				t_count;
 
+typedef struct s_imagem
+{
+	void	*img;
+	char	*addr; //address
+	int		bpp; //bits per pixel
+	int		line_size;
+	int		endian; //relação à transparencia
+}				t_imagem;
+
+typedef struct s_imgs
+{
+	t_imagem	cavalinho;
+	t_imagem	wall;
+	t_imagem	item;
+	t_imagem	endpoint;
+	t_imagem	floor;
+}				t_imgs;
+
 typedef struct s_vars
 {
 	void	*mlx;
 	void	*win;
-	void	*img;
+	void	*img_static;
 	t_data	*fullmap;
+	t_imgs	sprite;
 }				t_vars;
 
 //Definitions paths
 # define SPRITE_WALL "./assets/sprites/wall.xpm"
 # define SPRITE_CHAR "./assets/sprites/char.xpm"
-# define SPRITE_COLLECTIBLE "./assets/sprites/collectible.xpm"
+# define SPRITE_ITEM "./assets/sprites/collectible.xpm"
 # define SPRITE_EXIT "./assets/sprites/exit.xpm"
+# define SPRITE_FLOOR "./assets/sprites/floor.xpm"
 # define MAP_ARCH "./assets/maps/test.ber"
 
 //Definitions
