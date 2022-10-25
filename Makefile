@@ -5,7 +5,8 @@ FRONT_FILES =	click_hook.c \
 		destroy.c \
 		open_game.c \
 		start_window.c \
-		key_hook.c
+		key_hook.c \
+		sprites_load.c
 
 BACK_FILES =	map.c \
 		verification.c \

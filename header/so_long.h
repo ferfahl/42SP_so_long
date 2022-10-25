@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 15:26:55 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/25 09:48:19 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/25 10:39:42 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int		check_path(t_data *fullmap);
 //opening
 void	open_game(t_vars *vars);
 void	start_window(t_data *fullmap);
+void	load_img(t_vars *vars);
+void	sprite_place(t_vars *vars, char **map);
 
 //events
 int		key_hook(int keycode, t_vars *vars);
