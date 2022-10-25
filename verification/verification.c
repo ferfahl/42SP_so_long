@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 15:25:37 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/16 15:37:10 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/25 10:36:41 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	write_map(char *file, t_data *fullmap)
 {
 	int	fd;
 	int	index;
+	char	*temp;
 
 	index = 0;
 	fd = open(file, O_RDONLY);
@@ -51,6 +52,8 @@ void	write_map(char *file, t_data *fullmap)
 		fullmap->map[index] = ft_strtrim_mod(fullmap->map[index], "\n");
 		index++;
 	}
+	temp = get_next_line(fd);
+	free(temp);
 	fullmap->map[index] = NULL;
 	close(fd);
 }

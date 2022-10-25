@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 22:37:58 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/25 09:44:43 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/25 10:33:58 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,9 @@ void	load_xpm(t_vars *vars, t_imagem *img, void *sprite)
 	int		height;
 
 	img->img = NULL;
-	ft_printf("%p\n\n", img->img);
+//	ft_printf("%p\n\n", img->img);
 	img->img = mlx_xpm_file_to_image(vars->mlx, sprite, &width, &height);
-	ft_printf("%p\n\n", img->img);
+//	ft_printf("%p\n\n", img->img);
 	if (img->img == NULL)
 		ft_printf("Error loading img");
 }
