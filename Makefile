@@ -76,7 +76,7 @@ $(OBJPATH)/%.o: $(BACK_PATH)/%.c $(HEADER)
 		cc $(FLAGS) -c $< -o $@ $(INCLUDE)
 #mcheck
 mem:
-		$(VAL) ./$(NAME) $(MAP)
+		$(VAL) --show-leak-kinds=all ./$(NAME) $(MAP)
 
 #run so_long
 so:
