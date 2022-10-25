@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:02:51 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/24 15:03:53 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/25 13:26:15 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ typedef struct s_vars
 	void	*mlx;
 	void	*win;
 	void	*img_static;
+	int		steps;
 	t_data	*fullmap;
 	t_imgs	sprite;
 }				t_vars;
@@ -78,6 +79,7 @@ typedef struct s_vars
 # define COLLECTIBLE 'C'
 # define ENDPOINT 'E'
 # define FLOOD 'F'
+# define TEMP1 'K'
 
 //Error definitions
 # define ERROR_MAP_1 "Invalid path"

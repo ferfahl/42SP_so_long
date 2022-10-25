@@ -12,42 +12,67 @@
 
 #include "./header/so_long.h"
 
-void	move_up(t_vars *vars)
+void	leaving(t_vars *vars)
 {
-	(void)vars;
-	ft_printf("Up\n");
+	if (vars->fullmap->collectibles == 0)
+	{
+		ft_printf("YOU WON!");
+		destroy_and_free(vars);
+	}
 }
 
-void	move_down(t_vars *vars)
+void	not_leaving(t_vars *vars, t_count *c, size_t i, size_t j)
 {
-	(void)vars;
-	ft_printf("Down\n");
+	vars->fullmap->map[c->row][c->collumn] = ENDPOINT;
+	vars->fullmap->map[c->row + i][c->collumn + j] = PLAYER;
+	vars->steps++;
 }
 
-void	move_left(t_vars *vars)
+void	moving(t_vars *vars, size_t i, size_t j)
 {
-	(void)vars;
-	ft_printf("Left\n");
-}
+	t_count	*c;
 
-void	move_right(t_vars *vars)
-{
-	(void)vars;
-	ft_printf("Right\n");
+	c = (t_count *)ft_calloc(1, sizeof(t_count));
+	finding_p(c, vars->fullmap->map);
+	if (vars->fullmap->map[c->row][c->collumn] == TEMP1)
+		not_leaving(vars, c, i, j);
+	if (vars->fullmap->map[c->row + i][c->collumn + j] == EMPTY)
+	{
+		vars->fullmap->map[c->row][c->collumn] = EMPTY;
+		vars->fullmap->map[c->row + i][c->collumn + j] = PLAYER;
+		vars->steps++;
+	}
+	else if (vars->fullmap->map[c->row + i][c->collumn + j] == COLLECTIBLE)
+	{
+		vars->fullmap->collectibles--;
+		vars->fullmap->map[c->row][c->collumn] = EMPTY;
+		vars->fullmap->map[c->row + i][c->collumn + j] = PLAYER;
+		vars->steps++;
+	}
+	else if (vars->fullmap->map[c->row + i][c->collumn + j] == ENDPOINT)
+	{
+		leaving(vars);
+		vars->fullmap->map[c->row][c->collumn] = EMPTY;
+		vars->fullmap->map[c->row + i][c->collumn + j] = TEMP1;
+		vars->steps++;
+	}
+	ft_printf("Moves: %d\n", vars->steps);
+	ft_printf("Collectibles: %d\n", vars->fullmap->collectibles);
+	ft_printf_array(vars->fullmap->map);
+	free(c);
 }
 
 int	key_hook(int keycode, t_vars *vars)
 {
 	if (keycode == 119 || keycode == 65362)
-		move_up(vars);
+		moving(vars, -1, 0);
 	if (keycode == 115 || keycode == 65364)
-		move_down(vars);
+		moving(vars, 1, 0);
 	if (keycode == 100 || keycode == 65363)
-		move_right(vars);
+		moving(vars, 0, 1);
 	if (keycode == 97 || keycode == 65361)
-		move_left(vars);
+		moving(vars, 0, -1);
 	if (keycode == 65307)
 		destroy_and_free(vars);
-	ft_printf("%d\n", keycode);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 15:26:55 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/25 10:39:42 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/25 11:48:37 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int		check_error_2(t_data *fullmap);
 int		check_walls(t_data *fullmap);
 int		check_extras(t_data *fullmap);
 int		check_path(t_data *fullmap);
+void	finding_p(t_count *c, char **dupe);
 
 //opening
 void	open_game(t_vars *vars);
