@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:02:51 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/25 13:26:15 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/30 12:04:44 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ typedef struct s_imgs
 	t_imagem	item;
 	t_imagem	endpoint;
 	t_imagem	floor;
+	t_imagem	temp1;
 }				t_imgs;
 
 typedef struct s_vars
@@ -69,6 +70,7 @@ typedef struct s_vars
 # define SPRITE_ITEM "./assets/sprites/collectible.xpm"
 # define SPRITE_EXIT "./assets/sprites/exit.xpm"
 # define SPRITE_FLOOR "./assets/sprites/floor.xpm"
+# define SPRITE_TEMP1 "./assets/sprites/temp1.xpm"
 # define MAP_ARCH "./assets/maps/test.ber"
 
 //Definitions
