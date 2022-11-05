@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:04:42 by feralves          #+#    #+#             */
-/*   Updated: 2022/11/05 12:32:06 by feralves         ###   ########.fr       */
+/*   Updated: 2022/11/05 19:55:56 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,8 @@
 //minilibx
 # include "../libs/minilibx-linux/mlx.h"
 # include "../libs/minilibx-linux/mlx_int.h"
+
+//get time of day
+# include <sys/time.h>
 
 #endif

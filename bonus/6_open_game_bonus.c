@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   open_game_bonus.c                                  :+:      :+:    :+:   */
+/*   6_open_game_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 22:37:58 by feralves          #+#    #+#             */
-/*   Updated: 2022/11/05 12:25:56 by feralves         ###   ########.fr       */
+/*   Updated: 2022/11/05 20:13:32 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,15 @@
 
 int	render_game(t_vars *vars)
 {
-	sprite_place(vars, vars->fullmap->map);
+	struct timeval	time01;
+	int				time02;
+	
+	gettimeofday(&time01, NULL);
+	if (time01.tv_usec % 10000 == 0)
+		time02 = 1;
+	else if (time01.tv_usec % 10000 != 0)
+		time02 = 0;
+	sprite_place(vars, vars->fullmap->map, time02);
 	return (0);
 }
 
@@ -28,7 +36,7 @@ void	open_game(t_vars *vars)
 	if (vars->win == NULL)
 		if_error("Mlx window error", vars);
 	load_img(vars);
-	sprite_place(vars, vars->fullmap->map);
+	sprite_place(vars, vars->fullmap->map, 0);
 	mlx_expose_hook(vars->win, &render_game, vars);
 	mlx_hook(vars->win, 2, (1L << 0), key_hook, vars);
 	mlx_hook(vars->win, 17, (1L << 2), click_hook, vars);

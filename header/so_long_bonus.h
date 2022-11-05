@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 15:26:55 by feralves          #+#    #+#             */
-/*   Updated: 2022/11/05 12:32:13 by feralves         ###   ########.fr       */
+/*   Updated: 2022/11/05 20:12:37 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	finding_p(t_count *c, char **dupe);
 void	open_game(t_vars *vars);
 void	start_window(t_data *fullmap);
 void	load_img(t_vars *vars);
-void	sprite_place(t_vars *vars, char **map);
+void	sprite_place(t_vars *vars, char **map, int time);
 void	load_xpm(t_vars *vars, t_draw *img, void *sprite);
 
 //events

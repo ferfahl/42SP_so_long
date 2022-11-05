@@ -14,14 +14,15 @@ MANDATORY_FILES =	click_hook.c \
 
 BONUS_FILES =	click_hook_bonus.c \
 		destroy_bonus.c \
-		open_game_bonus.c \
-		start_window_bonus.c \
-		key_hook_bonus.c \
-		sprites_load_bonus.c \
-		map_bonus.c \
-		verification_bonus.c \
-		path_bonus.c \
-		main_bonus.c
+		6_open_game_bonus.c \
+		5_start_window_bonus.c \
+		9_key_hook_bonus.c \
+		8_sprites_load_bonus.c \
+		7_xpm_load.c \
+		3_map_bonus.c \
+		2_verification_bonus.c \
+		4_path_bonus.c \
+		1_main_bonus.c
 
 #static library's name
 NAME =	so_long
@@ -99,7 +100,7 @@ mem:
 
 #mcheck_bonus
 bmem:
-		$(VAL) ./$(B_NAME) $(MAP)
+		$(VAL) --leak-check=full ./$(B_NAME) $(MAP)
 
 #run so_long
 so:
@@ -107,7 +108,7 @@ so:
 
 #run so_long_bonus
 so_bonus:
-		make && clear && ./$(B_NAME) $(MAP)
+		make && clear && ./$(B_NAME) ./assets/maps/map_square_bonus.ber
 
 #remove objects
 clean:
