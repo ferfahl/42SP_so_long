@@ -6,15 +6,15 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 15:26:55 by feralves          #+#    #+#             */
-/*   Updated: 2022/11/04 20:58:02 by feralves         ###   ########.fr       */
+/*   Updated: 2022/11/05 12:32:13 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#ifndef SO_LONG_BONUS_H
+# define SO_LONG_BONUS_H
 
 //Headers
-# include "libs.h"
+# include "libs_bonus.h"
 # include "define_bonus.h"
 
 //Functions

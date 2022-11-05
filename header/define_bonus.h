@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:02:51 by feralves          #+#    #+#             */
-/*   Updated: 2022/11/04 21:09:32 by feralves         ###   ########.fr       */
+/*   Updated: 2022/11/05 12:34:02 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 //Headers
 # include "so_long_bonus.h"
-# include "libs.h"
+# include "libs_bonus.h"
 
 //Structs
 typedef struct s_data
@@ -32,6 +32,7 @@ typedef struct s_count
 	int	collumn;
 	int	player;
 	int	endpoint;
+	int	villain;
 	int	index;
 }				t_count;
 
@@ -48,6 +49,7 @@ typedef struct s_imgs
 	t_draw	item;
 	t_draw	endpoint;
 	t_draw	floor;
+	t_draw	villain;
 	t_draw	temp1;
 }				t_imgs;
 

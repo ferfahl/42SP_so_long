@@ -6,11 +6,11 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 10:38:09 by feralves          #+#    #+#             */
-/*   Updated: 2022/11/04 21:28:39 by feralves         ###   ########.fr       */
+/*   Updated: 2022/11/05 12:25:40 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./header/so_long.h"
+#include "../header/so_long_bonus.h"
 
 void	put_sprite(t_vars *vars, void *img, int x, int y)
 {

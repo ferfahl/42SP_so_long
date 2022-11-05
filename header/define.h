@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:02:51 by feralves          #+#    #+#             */
-/*   Updated: 2022/11/04 20:48:59 by feralves         ###   ########.fr       */
+/*   Updated: 2022/11/05 12:31:38 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct s_count
 	int	collumn;
 	int	player;
 	int	endpoint;
+	int	
 	int	index;
 }				t_count;
 

@@ -12,12 +12,25 @@ MANDATORY_FILES =	click_hook.c \
 		path.c \
 		main.c
 
+BONUS_FILES =	click_hook_bonus.c \
+		destroy_bonus.c \
+		open_game_bonus.c \
+		start_window_bonus.c \
+		key_hook_bonus.c \
+		sprites_load_bonus.c \
+		map_bonus.c \
+		verification_bonus.c \
+		path_bonus.c \
+		main_bonus.c
+
 #static library's name
 NAME =	so_long
+B_NAME = so_long_bonus
 
 #directories
 OBJPATH = temps
 MANDATORY_PATH = sources
+BONUS_PATH = bonus
 LIBFT_PATH =	./libs/libft
 LIBFT =			$(LIBFT_PATH)/libft.a
 MLX_PATH =		./libs/minilibx-linux
@@ -42,12 +55,15 @@ RM_DIR =	rm -rf
 #tranform into .o
 OBJ_MANDATORY = $(MANDATORY_FILES:%.c=$(OBJPATH)/%.o)
 
-OBJ_BACK = $(BACK_FILES:%.c=$(OBJPATH)/%.o)
+OBJ_BONUS = $(BONUS_FILES:%.c=$(OBJPATH)/%.o)
 
 #####################RULES#####################
 
 #make
 all: $(OBJPATH) $(NAME)
+
+#make bonus
+bonus: $(OBJPATH) $(B_NAME)
 
 #make folder for temps
 $(OBJPATH):
@@ -62,36 +78,52 @@ $(MLX):
 		make -C $(MLX_PATH)
 
 #rule name - make so_long
-$(NAME): $(LIBFT) $(MLX) $(OBJ_MANDATORY) $(OBJ_BACK)
+$(NAME): $(LIBFT) $(MLX) $(OBJ_MANDATORY)
 		cc $(FLAGS) -o $(NAME) $(OBJ_MANDATORY) $(LIBFT) $(MLX) $(MLXFLAGS)
+
+#rule name - make so_long_bonus
+$(B_NAME): $(LIBFT) $(MLX) $(OBJ_BONUS)
+		cc $(FLAGS) -o $(B_NAME) $(OBJ_BONUS) $(LIBFT) $(MLX) $(MLXFLAGS)
 
 #compile MANDATORY
 $(OBJPATH)/%.o: $(MANDATORY_PATH)/%.c $(HEADER)
+		cc $(FLAGS) -c $< -o $@ $(INCLUDE)
+
+#compile BONUS
+$(OBJPATH)/%.o: $(BONUS_PATH)/%.c $(HEADER)
 		cc $(FLAGS) -c $< -o $@ $(INCLUDE)
 
 #mcheck
 mem:
 		$(VAL) ./$(NAME) $(MAP)
 
+#mcheck_bonus
+bmem:
+		$(VAL) ./$(B_NAME) $(MAP)
+
 #run so_long
 so:
-		make && clear && ./so_long $(MAP)
+		make && clear && ./$(NAME) $(MAP)
+
+#run so_long_bonus
+so_bonus:
+		make && clear && ./$(B_NAME) $(MAP)
 
 #remove objects
 clean:
 		make clean -C $(LIBFT_PATH)
-		$(RM) $(OBJ)
+		$(RM) $(OBJ_MANDATORY) $(OBJ_BONUS)
 
 #remove all
 fclean: clean
 		make fclean -C $(LIBFT_PATH)
-		$(RM) $(NAME) $(RM_DIR) $(OBJPATH)
+		$(RM) $(NAME) $(B_NAME) $(RM_DIR) $(OBJPATH)
 
 #clear all
 re: fclean all
 
 #avoids double inclusion
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
 
 git:
 		git add .
