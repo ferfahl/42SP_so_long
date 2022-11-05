@@ -1,5 +1,5 @@
 /* XPM */
-static char * floor_xpm[] = {
+static char * floor_2_xpm[] = {
 "32 32 5 1",
 " 	c None",
 ".	c #4DF5F5",

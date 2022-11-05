@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:02:51 by feralves          #+#    #+#             */
-/*   Updated: 2022/11/05 13:55:39 by feralves         ###   ########.fr       */
+/*   Updated: 2022/11/05 17:09:48 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ typedef struct s_vars
 # define ERROR_MAP_4 "Where are the walls?"
 # define ERROR_MAP_5 "Invalid characters"
 # define ERROR_MAP_6 "Wrong number of characters/collectibles"
-# define ERROR_MAP_7 //valid dimension [tamanho máximo?]
+# define ERROR_MAP_7 "Map too big"
 # define ERROR_ARG_1 "Invalid number of arguments"
 # define ERROR_ARG_2 "Invalid extension"
 # define ERROR_ARG_3 "File not found"

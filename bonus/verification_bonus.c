@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 15:25:37 by feralves          #+#    #+#             */
-/*   Updated: 2022/11/05 12:25:21 by feralves         ###   ########.fr       */
+/*   Updated: 2022/11/05 17:31:48 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,7 @@ int	check_error_1(int argc, char **argv, t_data *fullmap)
 		return (ft_printf("Error\n%s\n", ERROR_MAP_2));
 	if (fullmap->height == -1)
 		return (ft_printf("Error\n%s\n", ERROR_ARG_3));
+	if (fullmap->height >= 18)
+		return (ft_printf("Error\n%s\n", ERROR_MAP_7));
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 15:25:37 by feralves          #+#    #+#             */
-/*   Updated: 2022/11/04 21:25:46 by feralves         ###   ########.fr       */
+/*   Updated: 2022/11/05 17:32:15 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	map_width(t_data *fullmap)
 
 	index = 1;
 	fullmap->width = ft_strlen(fullmap->map[0]);
+	if (fullmap->width >= 36)
+		return (ft_printf("Error\n%s\n", ERROR_MAP_7));
 	while (index < fullmap->height)
 	{
 		if ((int)ft_strlen(fullmap->map[index]) != fullmap->width)
