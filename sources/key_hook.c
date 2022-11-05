@@ -63,7 +63,6 @@ void	moving(t_vars *vars, int i, int j)
 		vars->steps++;
 	}
 	ft_printf("Moves: %d\n", vars->steps);
-	//pode mandar só print, gatona :)
 }
 
 int	key_hook(int keycode, t_vars *vars)

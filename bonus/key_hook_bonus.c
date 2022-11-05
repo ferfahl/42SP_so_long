@@ -12,13 +12,16 @@
 
 #include "../header/so_long_bonus.h"
 
-void	leaving(t_vars *vars)
+void	leaving(t_vars *vars, t_count *c, size_t i, size_t j)
 {
 	if (vars->fullmap->collectibles == 0)
 	{
 		ft_printf("YOU WON!");
 		destroy_and_free(vars);
 	}
+	vars->fullmap->map[c->row][c->collumn] = EMPTY;
+	vars->fullmap->map[c->row + i][c->collumn + j] = TEMP1;
+	vars->steps++;
 }
 
 void	not_leaving(t_vars *vars, t_count *c, size_t i, size_t j)
@@ -56,12 +59,7 @@ void	moving(t_vars *vars, int i, int j)
 		next_move(vars, &c, i, j);
 	}
 	else if (vars->fullmap->map[c.row + i][c.collumn + j] == ENDPOINT)
-	{
-		leaving(vars);
-		vars->fullmap->map[c.row][c.collumn] = EMPTY;
-		vars->fullmap->map[c.row + i][c.collumn + j] = TEMP1;
-		vars->steps++;
-	}
+		leaving(vars, &c, i, j);
 }
 
 int	key_hook(int keycode, t_vars *vars)
