@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   define.h                                           :+:      :+:    :+:   */
+/*   define_bonus.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:02:51 by feralves          #+#    #+#             */
-/*   Updated: 2022/11/04 20:48:59 by feralves         ###   ########.fr       */
+/*   Updated: 2022/11/04 21:09:32 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEFINE_H
-# define DEFINE_H
+#ifndef DEFINE_BONUS_H
+# define DEFINE_BONUS_H
 
 //Headers
-# include "so_long.h"
+# include "so_long_bonus.h"
 # include "libs.h"
 
 //Structs
@@ -65,6 +65,7 @@ typedef struct s_vars
 //Definitions paths
 # define SPRITE_CHAR_RIGHT "./assets/sprites/char.xpm"
 # define SPRITE_CHAR_LEFT "./assets/sprites/char_left.xpm"
+# define SPRITE_VILLAIN "./assets/sprites/villain.xpm"
 # define SPRITE_WALL "./assets/sprites/wall.xpm"
 # define SPRITE_ITEM "./assets/sprites/collectible.xpm"
 # define SPRITE_EXIT "./assets/sprites/exit.xpm"
@@ -77,6 +78,7 @@ typedef struct s_vars
 # define WALL '1'
 # define EMPTY '0'
 # define PLAYER 'P'
+# define VILLAIN 'V'
 # define COLLECTIBLE 'C'
 # define ENDPOINT 'E'
 # define FLOOD 'F'

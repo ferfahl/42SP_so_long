@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sprites_load.c                                     :+:      :+:    :+:   */
+/*   sprites_load_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 10:38:09 by feralves          #+#    #+#             */
-/*   Updated: 2022/11/04 21:24:36 by feralves         ###   ########.fr       */
+/*   Updated: 2022/11/04 21:28:39 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,13 @@
 
 void	put_sprite(t_vars *vars, void *img, int x, int y)
 {
+	char	*peanuts;
+
 	mlx_put_image_to_window(vars->mlx, vars->win, img, x, y);
+	mlx_string_put(vars->mlx, vars->win, 10, 10, 0x000000, "Moves: ");
+	peanuts = ft_itoa(vars->steps);
+	mlx_string_put(vars->mlx, vars->win, 50, 10, 0x000000, peanuts);
+	free(peanuts);
 }
 
 void	*choose_sprite(t_vars *vars, char **map, t_count c)

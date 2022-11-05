@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 15:25:37 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/25 10:36:41 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/30 12:36:10 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ int	map_height(char *file)
 
 void	write_map(char *file, t_data *fullmap)
 {
-	int	fd;
-	int	index;
+	int		fd;
+	int		index;
 	char	*temp;
 
 	index = 0;

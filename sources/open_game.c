@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 22:37:58 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/29 20:06:28 by feralves         ###   ########.fr       */
+/*   Updated: 2022/11/04 19:54:45 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ int	render_game(t_vars *vars)
 void	open_game(t_vars *vars)
 {
 	vars->mlx = mlx_init();
-	//check if null
+	if (vars->mlx == NULL)
+		if_error("Mlx init error", vars);
 	vars->win = mlx_new_window(vars->mlx, PIXEL_SIZE * vars->fullmap->width, \
 	PIXEL_SIZE * vars->fullmap->height, "so_long");
-	//check if null
-	ft_printf_array(vars->fullmap->map); //temp
-	//vars->img_static = mlx_new_image(vars->mlx, PIXEL_SIZE * vars->fullmap->width, PIXEL_SIZE * vars->fullmap->height);
+	if (vars->win == NULL)
+		if_error("Mlx window error", vars);
 	load_img(vars);
 	sprite_place(vars, vars->fullmap->map);
 	mlx_expose_hook(vars->win, &render_game, vars);

@@ -1,14 +1,13 @@
 #####################INPUTS#####################
 
 #scr functions
-FRONT_FILES =	click_hook.c \
+MANDATORY_FILES =	click_hook.c \
 		destroy.c \
 		open_game.c \
 		start_window.c \
 		key_hook.c \
-		sprites_load.c
-
-BACK_FILES =	map.c \
+		sprites_load.c \
+		map.c \
 		verification.c \
 		path.c \
 		main.c
@@ -18,8 +17,7 @@ NAME =	so_long
 
 #directories
 OBJPATH = temps
-FRONT_PATH = sources
-BACK_PATH = verification
+MANDATORY_PATH = sources
 LIBFT_PATH =	./libs/libft
 LIBFT =			$(LIBFT_PATH)/libft.a
 MLX_PATH =		./libs/minilibx-linux
@@ -42,7 +40,7 @@ RM =		-rm -f
 RM_DIR =	rm -rf
 
 #tranform into .o
-OBJ_FRONT = $(FRONT_FILES:%.c=$(OBJPATH)/%.o)
+OBJ_MANDATORY = $(MANDATORY_FILES:%.c=$(OBJPATH)/%.o)
 
 OBJ_BACK = $(BACK_FILES:%.c=$(OBJPATH)/%.o)
 
@@ -64,19 +62,16 @@ $(MLX):
 		make -C $(MLX_PATH)
 
 #rule name - make so_long
-$(NAME): $(LIBFT) $(MLX) $(OBJ_FRONT) $(OBJ_BACK)
-		cc $(FLAGS) -o $(NAME) $(OBJ_BACK) $(OBJ_FRONT) $(LIBFT) $(MLX) $(MLXFLAGS)
+$(NAME): $(LIBFT) $(MLX) $(OBJ_MANDATORY) $(OBJ_BACK)
+		cc $(FLAGS) -o $(NAME) $(OBJ_MANDATORY) $(LIBFT) $(MLX) $(MLXFLAGS)
 
-#compile front
-$(OBJPATH)/%.o: $(FRONT_PATH)/%.c $(HEADER)
+#compile MANDATORY
+$(OBJPATH)/%.o: $(MANDATORY_PATH)/%.c $(HEADER)
 		cc $(FLAGS) -c $< -o $@ $(INCLUDE)
 
-#compile back
-$(OBJPATH)/%.o: $(BACK_PATH)/%.c $(HEADER)
-		cc $(FLAGS) -c $< -o $@ $(INCLUDE)
 #mcheck
 mem:
-		$(VAL) --show-leak-kinds=all ./$(NAME) $(MAP)
+		$(VAL) ./$(NAME) $(MAP)
 
 #run so_long
 so:

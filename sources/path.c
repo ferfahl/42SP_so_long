@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 19:41:39 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/25 13:26:42 by feralves         ###   ########.fr       */
+/*   Updated: 2022/10/30 12:35:43 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,8 @@ void	finding_p(t_count *c, char **dupe)
 		c->collumn = 1;
 		while (dupe[c->row][c->collumn])
 		{
-			if (dupe[c->row][c->collumn] == PLAYER ||dupe[c->row][c->collumn] == TEMP1)
+			if (dupe[c->row][c->collumn] == PLAYER || \
+			dupe[c->row][c->collumn] == TEMP1)
 				return ;
 			c->collumn++;
 		}

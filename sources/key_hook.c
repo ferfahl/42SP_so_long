@@ -23,30 +23,37 @@ void	leaving(t_vars *vars)
 
 void	not_leaving(t_vars *vars, t_count *c, size_t i, size_t j)
 {
+	if (vars->fullmap->map[c->row + i][c->collumn + j] == WALL)
+		return ;
 	vars->fullmap->map[c->row][c->collumn] = ENDPOINT;
 	vars->fullmap->map[c->row + i][c->collumn + j] = PLAYER;
 	vars->steps++;
 }
 
-void	moving(t_vars *vars, size_t i, size_t j)
+void	next_move(t_vars *vars, t_count *c, size_t i, size_t j)
+{
+	vars->fullmap->map[c->row][c->collumn] = EMPTY;
+	vars->fullmap->map[c->row + i][c->collumn + j] = PLAYER;
+	vars->steps++;
+}
+
+void	moving(t_vars *vars, int i, int j)
 {
 	t_count	c;
 
+	if (j == 1)
+		vars->is_right = 1;
+	else if (j == -1)
+		vars->is_right = 0;
 	finding_p(&c, vars->fullmap->map);
 	if (vars->fullmap->map[c.row][c.collumn] == TEMP1)
 		not_leaving(vars, &c, i, j);
 	if (vars->fullmap->map[c.row + i][c.collumn + j] == EMPTY)
-	{
-		vars->fullmap->map[c.row][c.collumn] = EMPTY;
-		vars->fullmap->map[c.row + i][c.collumn + j] = PLAYER;
-		vars->steps++;
-	}
+		next_move(vars, &c, i, j);
 	else if (vars->fullmap->map[c.row + i][c.collumn + j] == COLLECTIBLE)
 	{
 		vars->fullmap->collectibles--;
-		vars->fullmap->map[c.row][c.collumn] = EMPTY;
-		vars->fullmap->map[c.row + i][c.collumn + j] = PLAYER;
-		vars->steps++;
+		next_move(vars, &c, i, j);
 	}
 	else if (vars->fullmap->map[c.row + i][c.collumn + j] == ENDPOINT)
 	{
@@ -56,8 +63,7 @@ void	moving(t_vars *vars, size_t i, size_t j)
 		vars->steps++;
 	}
 	ft_printf("Moves: %d\n", vars->steps);
-	ft_printf("Collectibles: %d\n", vars->fullmap->collectibles);
-	ft_printf_array(vars->fullmap->map);
+	//pode mandar só print, gatona :)
 }
 
 int	key_hook(int keycode, t_vars *vars)
