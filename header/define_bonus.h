@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:02:51 by feralves          #+#    #+#             */
-/*   Updated: 2022/11/05 19:45:55 by feralves         ###   ########.fr       */
+/*   Updated: 2022/11/06 12:09:01 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,10 @@ typedef struct s_data
 
 typedef struct s_count
 {
-	int	row;
-	int	collumn;
+	int	r;
+	int	col;
 	int	player;
 	int	endpoint;
-	int	villain;
 	int	index;
 }				t_count;
 
@@ -41,13 +40,12 @@ typedef struct s_draw
 	void	*img;
 }				t_draw;
 
-typedef struct	s_frame_p
+typedef struct s_frame_p
 {
 	t_draw	right1;
 	t_draw	right2;
 	t_draw	left1;
 	t_draw	left2;
-	
 }				t_frame_p;
 
 typedef struct s_frames
@@ -60,9 +58,9 @@ typedef struct s_imgs
 {
 	t_frame_p	player;
 	t_frame_p	villain;
-	t_frames	wall;
 	t_frames	item;
 	t_frames	floor;
+	t_draw		wall;
 	t_draw		endpoint;
 	t_draw		temp1;
 }				t_imgs;
@@ -76,6 +74,7 @@ typedef struct s_vars
 	t_data	*fullmap;
 	t_imgs	sprite;
 	int		is_right;
+	int		moved;
 }				t_vars;
 
 //Definitions paths
@@ -85,18 +84,15 @@ typedef struct s_vars
 # define SPRITE_CHAR_L2 "./assets/sprites_bonus/char_left2.xpm"
 # define SPRITE_V1 "./assets/sprites_bonus/villain_1.xpm"
 # define SPRITE_V2 "./assets/sprites_bonus/villain_2.xpm"
-# define SPRITE_V3 "./assets/sprites_bonus/villain_3.xpm"
-# define SPRITE_W1 "./assets/sprites_bonus/wall_1.xpm"
-# define SPRITE_W2 "./assets/sprites_bonus/wall_2.xpm"
 # define SPRITE_I1 "./assets/sprites_bonus/collectible_1.xpm"
 # define SPRITE_I2 "./assets/sprites_bonus/collectible_2.xpm"
 # define SPRITE_F1 "./assets/sprites_bonus/empty_1.xpm"
 # define SPRITE_F2 "./assets/sprites_bonus/empty_2.xpm"
 # define SPRITE_T1 "./assets/sprites_bonus/temp1.xpm"
 # define SPRITE_T2 "./assets/sprites_bonus/temp2.xpm"
+# define SPRITE_W "./assets/sprites_bonus/wall_1.xpm"
 # define SPRITE_EXIT "./assets/sprites_bonus/exit.xpm"
 # define MAP_ARCH "./assets/maps/map_square_bonus.ber"
-
 
 //Definitions
 # define PIXEL_SIZE 32

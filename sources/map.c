@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 15:25:37 by feralves          #+#    #+#             */
-/*   Updated: 2022/11/05 17:15:04 by feralves         ###   ########.fr       */
+/*   Updated: 2022/11/06 12:03:19 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,20 +64,20 @@ int	check_extras(t_data *fullmap)
 	c.player = 0;
 	c.endpoint = 0;
 	fullmap->collectibles = 0;
-	c.row = 0;
-	while (fullmap->map[++c.row])
+	c.r = 0;
+	while (fullmap->map[++c.r])
 	{
-		c.collumn = 0;
-		while (fullmap->map[c.row][++c.collumn])
+		c.col = 0;
+		while (fullmap->map[c.r][++c.col])
 		{
-			if (fullmap->map[c.row][c.collumn] == PLAYER)
+			if (fullmap->map[c.r][c.col] == PLAYER)
 				c.player++;
-			else if (fullmap->map[c.row][c.collumn] == ENDPOINT)
+			else if (fullmap->map[c.r][c.col] == ENDPOINT)
 				c.endpoint++;
-			else if (fullmap->map[c.row][c.collumn] == COLLECTIBLE)
+			else if (fullmap->map[c.r][c.col] == COLLECTIBLE)
 				fullmap->collectibles++;
-			else if (fullmap->map[c.row][c.collumn] != EMPTY
-				&& fullmap->map[c.row][c.collumn] != WALL)
+			else if (fullmap->map[c.r][c.col] != EMPTY
+				&& fullmap->map[c.r][c.col] != WALL)
 				return (1);
 		}
 	}

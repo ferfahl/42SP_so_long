@@ -12,31 +12,31 @@
 
 #include "../header/so_long_bonus.h"
 
-void	leaving(t_vars *vars, t_count *c, size_t i, size_t j)
+void	leaving(t_vars *vars, t_count *c, int i, int j)
 {
 	if (vars->fullmap->collectibles == 0)
 	{
-		ft_printf("YOU WON!");
+		ft_printf("YOU WON!\n\n");
 		destroy_and_free(vars);
 	}
-	vars->fullmap->map[c->row][c->collumn] = EMPTY;
-	vars->fullmap->map[c->row + i][c->collumn + j] = TEMP1;
+	vars->fullmap->map[c->r][c->col] = EMPTY;
+	vars->fullmap->map[c->r + i][c->col + j] = TEMP1;
 	vars->steps++;
 }
 
-void	not_leaving(t_vars *vars, t_count *c, size_t i, size_t j)
+void	not_leaving(t_vars *vars, t_count *c, int i, int j)
 {
-	if (vars->fullmap->map[c->row + i][c->collumn + j] == WALL)
+	if (vars->fullmap->map[c->r + i][c->col + j] == WALL)
 		return ;
-	vars->fullmap->map[c->row][c->collumn] = ENDPOINT;
-	vars->fullmap->map[c->row + i][c->collumn + j] = PLAYER;
+	vars->fullmap->map[c->r][c->col] = ENDPOINT;
+	vars->fullmap->map[c->r + i][c->col + j] = PLAYER;
 	vars->steps++;
 }
 
-void	next_move(t_vars *vars, t_count *c, size_t i, size_t j)
+void	next_move(t_vars *vars, t_count *c, int i, int j)
 {
-	vars->fullmap->map[c->row][c->collumn] = EMPTY;
-	vars->fullmap->map[c->row + i][c->collumn + j] = PLAYER;
+	vars->fullmap->map[c->r][c->col] = EMPTY;
+	vars->fullmap->map[c->r + i][c->col + j] = PLAYER;
 	vars->steps++;
 }
 
@@ -49,17 +49,22 @@ void	moving(t_vars *vars, int i, int j)
 	else if (j == -1)
 		vars->is_right = 0;
 	finding_p(&c, vars->fullmap->map);
-	if (vars->fullmap->map[c.row][c.collumn] == TEMP1)
+	if (vars->fullmap->map[c.r][c.col] == TEMP1)
 		not_leaving(vars, &c, i, j);
-	if (vars->fullmap->map[c.row + i][c.collumn + j] == EMPTY)
+	else if (vars->fullmap->map[c.r + i][c.col + j] == EMPTY)
 		next_move(vars, &c, i, j);
-	else if (vars->fullmap->map[c.row + i][c.collumn + j] == COLLECTIBLE)
+	else if (vars->fullmap->map[c.r + i][c.col + j] == COLLECTIBLE)
 	{
 		vars->fullmap->collectibles--;
 		next_move(vars, &c, i, j);
 	}
-	else if (vars->fullmap->map[c.row + i][c.collumn + j] == ENDPOINT)
+	else if (vars->fullmap->map[c.r + i][c.col + j] == ENDPOINT)
 		leaving(vars, &c, i, j);
+	else if (vars->fullmap->map[c.r + i][c.col + j] == VILLAIN)
+	{
+		ft_printf("YOU DIED :(\n\n");
+		destroy_and_free(vars);
+	}
 }
 
 int	key_hook(int keycode, t_vars *vars)

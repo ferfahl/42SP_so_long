@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:02:51 by feralves          #+#    #+#             */
-/*   Updated: 2022/11/05 17:09:48 by feralves         ###   ########.fr       */
+/*   Updated: 2022/11/06 12:04:46 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ typedef struct s_data
 
 typedef struct s_count
 {
-	int	row;
-	int	collumn;
+	int	r;
+	int	col;
 	int	player;
 	int	endpoint;
 	int	index;

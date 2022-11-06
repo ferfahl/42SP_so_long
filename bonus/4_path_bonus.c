@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   path_bonus.c                                       :+:      :+:    :+:   */
+/*   4_path_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 19:41:39 by feralves          #+#    #+#             */
-/*   Updated: 2022/11/05 12:25:46 by feralves         ###   ########.fr       */
+/*   Updated: 2022/11/06 12:05:31 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,38 +29,38 @@ int	check_dupe(char **dupe)
 {
 	t_count	c;
 
-	c.row = 1;
-	while (dupe[c.row])
+	c.r = 1;
+	while (dupe[c.r])
 	{
-		c.collumn = 1;
-		while (dupe[c.row][c.collumn])
+		c.col = 1;
+		while (dupe[c.r][c.col])
 		{
-			if (dupe[c.row][c.collumn] == ENDPOINT)
+			if (dupe[c.r][c.col] == ENDPOINT)
 				return (1);
-			else if (dupe[c.row][c.collumn] == COLLECTIBLE)
+			else if (dupe[c.r][c.col] == COLLECTIBLE)
 				return (1);
-			c.collumn++;
+			c.col++;
 		}
-		c.row++;
+		c.r++;
 	}
 	return (0);
 }
 
 void	finding_p(t_count *c, char **dupe)
 {
-	c->row = 1;
-	c->collumn = 1;
-	while (dupe[c->row])
+	c->r = 1;
+	c->col = 1;
+	while (dupe[c->r])
 	{
-		c->collumn = 1;
-		while (dupe[c->row][c->collumn])
+		c->col = 1;
+		while (dupe[c->r][c->col])
 		{
-			if (dupe[c->row][c->collumn] == PLAYER || \
-			dupe[c->row][c->collumn] == TEMP1)
+			if (dupe[c->r][c->col] == PLAYER || \
+			dupe[c->r][c->col] == TEMP1)
 				return ;
-			c->collumn++;
+			c->col++;
 		}
-		c->row++;
+		c->r++;
 	}
 }
 
@@ -84,7 +84,7 @@ int	check_path(t_data *fullmap)
 	dupe = malloc((fullmap->height + 1) * sizeof(char *));
 	create_dupe(fullmap->map, dupe);
 	finding_p(&c, dupe);
-	flood_fill(dupe, c.row, c.collumn, fullmap);
+	flood_fill(dupe, c.r, c.col, fullmap);
 	if (check_dupe(dupe))
 		return (ft_printf("Error\n%s\n", ERROR_MAP_1));
 	ft_free_array(dupe);

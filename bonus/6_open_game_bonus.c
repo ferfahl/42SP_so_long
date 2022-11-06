@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 22:37:58 by feralves          #+#    #+#             */
-/*   Updated: 2022/11/05 20:13:32 by feralves         ###   ########.fr       */
+/*   Updated: 2022/11/06 11:24:06 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,19 @@ int	render_game(t_vars *vars)
 {
 	struct timeval	time01;
 	int				time02;
-	
+
 	gettimeofday(&time01, NULL);
-	if (time01.tv_usec % 10000 == 0)
+	if (time01.tv_usec > 500000)
 		time02 = 1;
-	else if (time01.tv_usec % 10000 != 0)
+	else
 		time02 = 0;
+	if (time01.tv_sec % 2 == 1 && vars->moved == 0)
+	{
+		vars->moved = 1;
+		villain_moves(vars);
+	}
+	if (time01.tv_sec % 2 == 0)
+		vars->moved = 0;
 	sprite_place(vars, vars->fullmap->map, time02);
 	return (0);
 }

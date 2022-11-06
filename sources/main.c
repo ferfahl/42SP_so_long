@@ -6,11 +6,17 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 19:33:41 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/16 20:56:43 by feralves         ###   ########.fr       */
+/*   Updated: 2022/11/06 11:57:03 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/so_long.h"
+
+int	if_check_error(t_data fullmap)
+{
+	ft_free_array(fullmap.map);
+	return (1);
+}
 
 int	main(int argc, char **argv)
 {
@@ -21,7 +27,7 @@ int	main(int argc, char **argv)
 	fullmap.map = malloc((fullmap.height + 1) * sizeof(char *));
 	write_map(argv[1], &fullmap);
 	if (check_error_2(&fullmap))
-		return (1);
+		return (if_check_error(fullmap));
 	check_path(&fullmap);
 	start_window(&fullmap);
 }

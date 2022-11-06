@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 10:38:09 by feralves          #+#    #+#             */
-/*   Updated: 2022/11/04 21:24:36 by feralves         ###   ########.fr       */
+/*   Updated: 2022/11/06 12:03:19 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,19 @@ void	put_sprite(t_vars *vars, void *img, int x, int y)
 
 void	*choose_sprite(t_vars *vars, char **map, t_count c)
 {
-	if (map[c.row][c.collumn] == PLAYER && vars->is_right)
+	if (map[c.r][c.col] == PLAYER && vars->is_right)
 		return (vars->sprite.right_p.img);
-	else if (map[c.row][c.collumn] == PLAYER && !vars->is_right)
+	else if (map[c.r][c.col] == PLAYER && !vars->is_right)
 		return (vars->sprite.left_p.img);
-	if (map[c.row][c.collumn] == WALL)
+	if (map[c.r][c.col] == WALL)
 		return (vars->sprite.wall.img);
-	if (map[c.row][c.collumn] == COLLECTIBLE)
+	if (map[c.r][c.col] == COLLECTIBLE)
 		return (vars->sprite.item.img);
-	if (map[c.row][c.collumn] == ENDPOINT)
+	if (map[c.r][c.col] == ENDPOINT)
 		return (vars->sprite.endpoint.img);
-	if (map[c.row][c.collumn] == EMPTY)
+	if (map[c.r][c.col] == EMPTY)
 		return (vars->sprite.floor.img);
-	if (map[c.row][c.collumn] == TEMP1)
+	if (map[c.r][c.col] == TEMP1)
 		return (vars->sprite.temp1.img);
 	return (NULL);
 }
@@ -41,19 +41,19 @@ void	sprite_place(t_vars *vars, char **map)
 	t_count	c;
 	void	*sprite;
 
-	c.row = 0;
-	c.collumn = 0;
-	while (map[c.row])
+	c.r = 0;
+	c.col = 0;
+	while (map[c.r])
 	{
-		c.collumn = 0;
-		while (map[c.row][c.collumn])
+		c.col = 0;
+		while (map[c.r][c.col])
 		{
 			sprite = choose_sprite(vars, map, c);
-			put_sprite(vars, sprite, c.collumn * PIXEL_SIZE, \
-			c.row * PIXEL_SIZE);
-			c.collumn ++;
+			put_sprite(vars, sprite, c.col * PIXEL_SIZE, \
+			c.r * PIXEL_SIZE);
+			c.col ++;
 		}
-		c.row ++;
+		c.r ++;
 	}
 }
 

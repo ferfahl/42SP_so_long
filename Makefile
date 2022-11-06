@@ -22,7 +22,8 @@ BONUS_FILES =	click_hook_bonus.c \
 		3_map_bonus.c \
 		2_verification_bonus.c \
 		4_path_bonus.c \
-		1_main_bonus.c
+		1_main_bonus.c \
+		villain_moves.c
 
 #static library's name
 NAME =	so_long
@@ -38,6 +39,7 @@ MLX_PATH =		./libs/minilibx-linux
 MLX	 = $(MLX_PATH)/libmlx.a
 
 MAP = ./assets/maps/test.ber
+BMAP = ./assets/maps/bonus_map1.ber
 
 #header to libft.h
 INCLUDE = -I ./ -I $(LIBFT_PATH) -I $(MLX_PATH)
@@ -100,7 +102,7 @@ mem:
 
 #mcheck_bonus
 bmem:
-		$(VAL) --leak-check=full ./$(B_NAME) $(MAP)
+		$(VAL) --leak-check=full ./$(B_NAME) $(BMAP)
 
 #run so_long
 so:
@@ -108,7 +110,7 @@ so:
 
 #run so_long_bonus
 so_bonus:
-		make && clear && ./$(B_NAME) ./assets/maps/map_square_bonus.ber
+		make && clear && ./$(B_NAME) $(BMAP)
 
 #remove objects
 clean:

@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 10:38:09 by feralves          #+#    #+#             */
-/*   Updated: 2022/11/05 20:21:56 by feralves         ###   ########.fr       */
+/*   Updated: 2022/11/06 12:03:19 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,46 +25,40 @@ void	put_sprite(t_vars *vars, void *img, int x, int y)
 
 void	*choose_doll(t_vars *vars, char **map, t_count c, int time)
 {
-	if (map[c.row][c.collumn] == PLAYER && vars->is_right && time)
+	(void)time;
+	if (map[c.r][c.col] == PLAYER && vars->is_right && time)
 		return (vars->sprite.player.right1.img);
-	else if (map[c.row][c.collumn] == PLAYER && vars->is_right && !time)
+	else if (map[c.r][c.col] == PLAYER && vars->is_right && !time)
 		return (vars->sprite.player.right2.img);
-	else if (map[c.row][c.collumn] == PLAYER && !vars->is_right && time)
+	else if (map[c.r][c.col] == PLAYER && !vars->is_right && time)
 		return (vars->sprite.player.left1.img);
-	else if (map[c.row][c.collumn] == PLAYER && !vars->is_right && !time)
+	else if (map[c.r][c.col] == PLAYER && !vars->is_right && !time)
 		return (vars->sprite.player.left2.img);
-	else if (map[c.row][c.collumn] == VILLAIN && time)
+	else if (map[c.r][c.col] == VILLAIN && time)
 		return (vars->sprite.villain.left1.img);
- 	else if (map[c.row][c.collumn] == VILLAIN && !time)
+	else if (map[c.r][c.col] == VILLAIN && !time)
 		return (vars->sprite.villain.right1.img);
-/*	else if (map[c.row][c.collumn] == VILLAIN && time)
-		return (vars->sprite.villain.right2.img);
-	else if (map[c.row][c.collumn] == VILLAIN && !time)
-		return (vars->sprite.villain.right2.img); */
 	return (NULL);
 }
 
 void	*choose_sprite(t_vars *vars, char **map, t_count c, int time)
 {
-	if (map[c.row][c.collumn] == PLAYER)
+	(void)time;
+	if (map[c.r][c.col] == PLAYER || map[c.r][c.col] == VILLAIN)
 		return (choose_doll(vars, map, c, time));
-	if (map[c.row][c.collumn] == VILLAIN)
-		return (choose_doll(vars, map, c, time));
-	if (map[c.row][c.collumn] == WALL && time)
-		return (vars->sprite.wall.op1.img);
-	if (map[c.row][c.collumn] == WALL && !time)
-		return (vars->sprite.wall.op2.img);
-	if (map[c.row][c.collumn] == COLLECTIBLE && time)
+	if (map[c.r][c.col] == COLLECTIBLE && time)
 		return (vars->sprite.item.op1.img);
-	if (map[c.row][c.collumn] == COLLECTIBLE && !time)
+	if (map[c.r][c.col] == COLLECTIBLE && !time)
 		return (vars->sprite.item.op2.img);
-	if (map[c.row][c.collumn] == EMPTY && time)
+	if (map[c.r][c.col] == EMPTY && time)
 		return (vars->sprite.floor.op1.img);
-	if (map[c.row][c.collumn] == EMPTY && !time)
+	if (map[c.r][c.col] == EMPTY && !time)
 		return (vars->sprite.floor.op2.img);
-	if (map[c.row][c.collumn] == ENDPOINT)
+	if (map[c.r][c.col] == WALL)
+		return (vars->sprite.wall.img);
+	if (map[c.r][c.col] == ENDPOINT)
 		return (vars->sprite.endpoint.img);
-	if (map[c.row][c.collumn] == TEMP1)
+	if (map[c.r][c.col] == TEMP1)
 		return (vars->sprite.temp1.img);
 	return (NULL);
 }
@@ -74,18 +68,18 @@ void	sprite_place(t_vars *vars, char **map, int time)
 	t_count	c;
 	void	*sprite;
 
-	c.row = 0;
-	c.collumn = 0;
-	while (map[c.row])
+	c.r = 0;
+	c.col = 0;
+	while (map[c.r])
 	{
-		c.collumn = 0;
-		while (map[c.row][c.collumn])
+		c.col = 0;
+		while (map[c.r][c.col])
 		{
 			sprite = choose_sprite(vars, map, c, time);
-			put_sprite(vars, sprite, c.collumn * PIXEL_SIZE, \
-			c.row * PIXEL_SIZE);
-			c.collumn ++;
+			put_sprite(vars, sprite, c.col * PIXEL_SIZE, \
+			c.r * PIXEL_SIZE);
+			c.col ++;
 		}
-		c.row ++;
+		c.r ++;
 	}
 }
