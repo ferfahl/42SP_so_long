@@ -57,7 +57,6 @@ RM_DIR =	rm -rf
 
 #tranform into .o
 OBJ_MANDATORY = $(MANDATORY_FILES:%.c=$(OBJPATH)/%.o)
-
 OBJ_BONUS = $(BONUS_FILES:%.c=$(OBJPATH)/%.o)
 
 #####################RULES#####################
@@ -102,7 +101,7 @@ mem:
 
 #mcheck_bonus
 bmem:
-		$(VAL) --leak-check=full ./$(B_NAME) $(BMAP)
+		$(VAL) ./$(B_NAME) $(BMAP)
 
 #run so_long
 so:

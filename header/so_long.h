@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 15:26:55 by feralves          #+#    #+#             */
-/*   Updated: 2022/11/04 20:49:41 by feralves         ###   ########.fr       */
+/*   Updated: 2022/11/06 13:49:32 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 //Headers
 # include "libs.h"
 # include "define.h"
+# include "buttons.h"
 
 //Functions
 //check

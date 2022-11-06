@@ -67,15 +67,15 @@ void	moving(t_vars *vars, int i, int j)
 
 int	key_hook(int keycode, t_vars *vars)
 {
-	if (keycode == 119 || keycode == 65362)
+	if (keycode == UP || keycode == W_KEY)
 		moving(vars, -1, 0);
-	if (keycode == 115 || keycode == 65364)
+	if (keycode == DOWN || keycode == S_KEY)
 		moving(vars, 1, 0);
-	if (keycode == 100 || keycode == 65363)
+	if (keycode == RIGHT || keycode == D_KEY)
 		moving(vars, 0, 1);
-	if (keycode == 97 || keycode == 65361)
+	if (keycode == LEFT || keycode == A_KEY)
 		moving(vars, 0, -1);
-	if (keycode == 65307)
+	if (keycode == ESC)
 		destroy_and_free(vars);
 	return (0);
 }

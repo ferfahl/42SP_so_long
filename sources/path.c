@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 19:41:39 by feralves          #+#    #+#             */
-/*   Updated: 2022/11/06 12:05:31 by feralves         ###   ########.fr       */
+/*   Updated: 2022/11/06 14:12:38 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,11 +82,16 @@ int	check_path(t_data *fullmap)
 	t_count	c;
 
 	dupe = malloc((fullmap->height + 1) * sizeof(char *));
+	if (!dupe)
+		return (ft_printf("Error\nMalloc error\n"));
 	create_dupe(fullmap->map, dupe);
 	finding_p(&c, dupe);
 	flood_fill(dupe, c.r, c.col, fullmap);
 	if (check_dupe(dupe))
+	{
+		ft_free_array(dupe);
 		return (ft_printf("Error\n%s\n", ERROR_MAP_1));
+	}
 	ft_free_array(dupe);
 	return (0);
 }
