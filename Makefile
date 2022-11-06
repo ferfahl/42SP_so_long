@@ -1,28 +1,28 @@
 #####################INPUTS#####################
 
 #scr functions
-MANDATORY_FILES =	click_hook.c \
+MANDATORY_FILES =	1_main.c \
+		2_verification.c \
+		3_map.c \
+		4_path.c \
+		5_start_window.c \
+		6_open_game.c \
+		7_sprites_load.c \
+		8_key_hook.c \
 		destroy.c \
-		open_game.c \
-		start_window.c \
-		key_hook.c \
-		sprites_load.c \
-		map.c \
-		verification.c \
-		path.c \
-		main.c
+		click_hook.c \
 
-BONUS_FILES =	click_hook_bonus.c \
-		destroy_bonus.c \
-		6_open_game_bonus.c \
-		5_start_window_bonus.c \
-		9_key_hook_bonus.c \
-		8_sprites_load_bonus.c \
-		7_xpm_load.c \
-		3_map_bonus.c \
+BONUS_FILES =	1_main_bonus.c \
 		2_verification_bonus.c \
+		3_map_bonus.c \
 		4_path_bonus.c \
-		1_main_bonus.c \
+		5_start_window_bonus.c \
+		6_open_game_bonus.c \
+		7_xpm_load.c \
+		8_sprites_load_bonus.c \
+		9_key_hook_bonus.c \
+		destroy_bonus.c \
+		click_hook_bonus.c \
 		villain_moves.c
 
 #static library's name
