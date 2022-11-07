@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 10:40:44 by feralves          #+#    #+#             */
-/*   Updated: 2022/11/06 12:05:46 by feralves         ###   ########.fr       */
+/*   Updated: 2022/11/07 20:08:03 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,20 @@ void	finding_v(t_count *v, char **map)
 		while (map[v->r][v->col])
 		{
 			if (map[v->r][v->col] == VILLAIN)
-				return ;
+				return (1);
 			v->col++;
 		}
 		v->r++;
 	}
+	return (0);
 }
 
 void	moving_v(t_vars *vars, int i, int j)
 {
 	t_count	v;
 
-	finding_v(&v, vars->fullmap->map);
+	if (!finding_v(&v, vars->fullmap->map))
+		return ;
 	if (vars->fullmap->map[v.r + i][v.col + j] == EMPTY)
 	{
 		vars->fullmap->map[v.r][v.col] = EMPTY;

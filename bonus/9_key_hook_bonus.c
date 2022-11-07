@@ -24,18 +24,23 @@ void	leaving(t_vars *vars, t_count *c, int i, int j)
 	vars->steps++;
 }
 
-void	not_leaving(t_vars *vars, t_count *c, int i, int j)
+void	next_move(t_vars *vars, t_count *c, int i, int j)
 {
-	if (vars->fullmap->map[c->r + i][c->col + j] == WALL)
-		return ;
-	vars->fullmap->map[c->r][c->col] = ENDPOINT;
+	vars->fullmap->map[c->r][c->col] = EMPTY;
 	vars->fullmap->map[c->r + i][c->col + j] = PLAYER;
 	vars->steps++;
 }
 
-void	next_move(t_vars *vars, t_count *c, int i, int j)
+void	not_leaving(t_vars *vars, t_count *c, int i, int j)
 {
-	vars->fullmap->map[c->r][c->col] = EMPTY;
+	if (vars->fullmap->map[c->r + i][c->col + j] == WALL)
+		return ;
+	else if (vars->fullmap->map[c->r + i][c->col + j] == COLLECTIBLE)
+	{
+		vars->fullmap->collectibles--;
+		next_move(vars, c, i, j);
+	}
+	vars->fullmap->map[c->r][c->col] = ENDPOINT;
 	vars->fullmap->map[c->r + i][c->col + j] = PLAYER;
 	vars->steps++;
 }
