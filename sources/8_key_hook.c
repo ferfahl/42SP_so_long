@@ -40,7 +40,6 @@ void	not_leaving(t_vars *vars, t_count *c, size_t i, size_t j)
 	vars->fullmap->map[c->r][c->col] = ENDPOINT;
 	vars->fullmap->map[c->r + i][c->col + j] = PLAYER;
 	vars->steps++;
-
 }
 
 void	moving(t_vars *vars, int i, int j)
