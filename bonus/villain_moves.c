@@ -6,13 +6,13 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 10:40:44 by feralves          #+#    #+#             */
-/*   Updated: 2022/11/07 20:08:03 by feralves         ###   ########.fr       */
+/*   Updated: 2022/11/07 20:10:36 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/so_long_bonus.h"
 
-void	finding_v(t_count *v, char **map)
+int	finding_v(t_count *v, char **map)
 {
 	v->r = 1;
 	v->col = 1;
