@@ -16,7 +16,7 @@ void	leaving(t_vars *vars)
 {
 	if (vars->fullmap->collectibles == 0)
 	{
-		ft_printf("YOU WON!");
+		ft_printf("YOU WON!\n\n");
 		destroy_and_free(vars);
 	}
 }
