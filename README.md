@@ -1,5 +1,7 @@
 # 42SP_so_long
 
+[![feralves's 42 pipex Score](https://badge42.vercel.app/api/v2/cli7l4sim001108mvngbgwmeh/project/2871980)](https://github.com/JaeSeoKim/badge42)
+
 So long and thanks for all the fish
 
 So sad that it should come to this
